@@ -1,0 +1,191 @@
+@use "../../styles/variables.scss" as *;
+@use "sass:color";
+
+.hotel-card {
+  background: $white;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba($primary, 0.3);
+
+  display: flex;
+
+  overflow: hidden;
+
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 25px rgba($primary, 0.12);
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.card-image {
+  width: 260px;
+  height: 180px;
+
+  flex-shrink: 0;
+
+  position: relative;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  .rating-badge {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    background: $white;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    font-weight: 600;
+
+    svg {
+      color: #f5b400;
+    }
+  }
+}
+
+.card-content {
+  flex: 1;
+
+  padding: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.hotel-info {
+  flex: 1;
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: 700;
+    color: $text;
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-bottom: 12px;
+
+    color: $light-gray;
+
+    svg {
+      color: $primary;
+    }
+  }
+
+  .rating-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-bottom: 15px;
+
+    font-weight: 600;
+
+    svg {
+      color: #f5b400;
+    }
+  }
+
+  .amenities {
+    display: flex;
+    gap: 15px;
+
+    svg {
+      color: $primary;
+      font-size: 18px;
+    }
+  }
+}
+
+.hotel-price {
+  width: 180px;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  text-align: right;
+
+  @media (max-width: 768px) {
+    width: 100%;
+
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .price {
+    font-size: 22px;
+    font-weight: 600;
+
+    color: $primary;
+
+    margin-bottom: 15px;
+
+    span {
+      font-size: 14px;
+      font-weight: 400;
+
+      color: $light-gray;
+      margin-left: 4px;
+    }
+  }
+
+  button {
+    min-width: 140px;
+
+    background: $primary;
+    color: $white;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 12px 20px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.3s ease;
+
+    &:hover {
+      background: color.adjust($primary, $lightness: -8%);
+    }
+  }
+}

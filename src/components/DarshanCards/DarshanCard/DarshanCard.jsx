@@ -1,0 +1,64 @@
+import { FaClock } from "react-icons/fa";
+import "./DarshanCard.scss";
+
+const DarshanCard = ({ item }) => {
+  return (
+    <div className="darshan-package-card">
+
+      <div className="darshan-package-image">
+        <img
+          src={item.image}
+          alt={item.title}
+        />
+      </div>
+
+      <div className="darshan-package-content">
+
+        <h3>{item.title}</h3>
+
+        <span className="darshan-duration">
+          <FaClock />
+          <span>Duration:</span>
+          {item.duration}
+        </span>
+
+        <p>{item.temple}</p>
+
+        <div className="darshan-package-footer">
+
+          <div className="darshan-price">
+            ₹{item.price}
+            {item.price !== "Custom" && (
+              <span>/ Person</span>
+            )}
+          </div>
+
+          <div className="darshan-action-buttons">
+
+            {item.isCustom ? (
+              <button className="darshan-create-btn">
+                Create Plan
+              </button>
+            ) : (
+              <>
+                <button className="darshan-details-btn">
+                  View Details
+                </button>
+
+                <button className="darshan-book-btn">
+                  Book Now
+                </button>
+              </>
+            )}
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  );
+};
+
+export default DarshanCard;

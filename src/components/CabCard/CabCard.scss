@@ -1,0 +1,203 @@
+@use "../../styles/variables.scss" as *;
+@use "sass:color";
+
+.cab-card {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+
+  background: $white;
+  border: 1px solid rgba($primary, 0.3);
+  border-radius: 16px;
+  padding: 18px 22px;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba($secondary, 0.08);
+  }
+
+  .card-image {
+    // width: 180px;
+    min-width: 180px;
+
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  .card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: 0 10px;
+  }
+
+  .content-top {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .content-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  .cab-name {
+    margin: 0;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: $primary;
+  }
+
+  .cab-description {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .cab-capacity {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: $text;
+
+    svg {
+      color: $accent;
+    }
+  }
+
+  .cab-features {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+
+      font-size: 0.9rem;
+      color: #666;
+
+      svg {
+        color: $accent;
+      }
+    }
+  }
+
+  .card-action {
+    min-width: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 14px;
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+
+    color: $primary;
+    font-size: 20px;
+    font-weight: 600;
+
+    svg {
+      font-size: 18px;
+    }
+  }
+
+  .view-btn {
+    background: $primary;
+    color: $white;
+
+    border: none;
+    border-radius: 8px;
+
+    padding: 12px 20px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: color.adjust(
+        $primary,
+        $lightness: -8%
+      );
+    }
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+  .cab-card {
+    .card-image {
+      width: 140px;
+      min-width: 140px;
+    }
+
+    .card-action {
+      min-width: 140px;
+    }
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .cab-card {
+    flex-direction: column;
+    text-align: center;
+
+    .card-image {
+      width: 100%;
+      min-width: auto;
+      justify-content: center;
+    }
+
+    .card-content {
+      padding: 0;
+      width: 100%;
+    }
+
+    .content-top,
+    .content-bottom {
+      align-items: center;
+    }
+
+    .cab-features {
+      justify-content: center;
+    }
+
+    .card-action {
+      width: 100%;
+      min-width: auto;
+
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 15px;
+    }
+  }
+}

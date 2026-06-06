@@ -1,0 +1,13 @@
+@use "./variables.scss" as *;
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: $bg;
+  color: $text;
+}
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

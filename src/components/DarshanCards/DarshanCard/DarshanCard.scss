@@ -1,0 +1,174 @@
+@use "../../../styles/variables.scss" as *;
+
+/* CARD */
+
+.darshan-package-card {
+  background: $white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba($primary, 0.12);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba($primary, 0.12);
+  }
+}
+
+/* IMAGE */
+
+.darshan-package-image {
+  height: 150px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* CONTENT */
+
+.darshan-package-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  h3 {
+    font-size: 20px;
+    color: $secondary2;
+    margin-bottom: 8px;
+    font-weight: 700;
+    margin-top: 5px;
+  }
+
+  p {
+    font-size: 14px;
+    color: $light-gray;
+    line-height: 1.5;
+    margin-top: 5px;
+  }
+}
+
+/* DURATION */
+
+.darshan-duration {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  background: rgba($primary, 0.1);
+  color: $primary;
+
+  padding: 5px 10px;
+
+  border-radius: 30px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  margin-bottom: 8px;
+
+  svg {
+    font-size: 12px;
+  }
+
+  span {
+    color: $secondary2;
+    font-weight: 600;
+  }
+}
+
+/* FOOTER */
+
+.darshan-package-footer {
+  margin-top: auto;
+}
+
+/* PRICE */
+
+.darshan-price {
+  font-size: 20px;
+  font-weight: 700;
+  color: $secondary2;
+  margin-bottom: 12px;
+
+  span {
+    font-size: 12px;
+    color: $light-gray;
+    font-weight: 400;
+  }
+}
+
+/* BUTTONS */
+
+.darshan-action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.darshan-details-btn {
+  flex: 1;
+  height: 36px;
+  border: 1px solid $info-bg;
+  background: $white;
+  color: $secondary2;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: rgba($primary, 0.08);
+  }
+}
+
+.darshan-book-btn {
+  flex: 1;
+  height: 36px;
+  border: none;
+
+  background: linear-gradient(
+    135deg,
+    $accent,
+    $secondary
+  );
+
+  color: $white;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.darshan-create-btn {
+  width: 100%;
+  height: 36px;
+  border: none;
+
+  background: linear-gradient(
+    135deg,
+    $accent,
+    $secondary
+  );
+
+  color: $white;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}

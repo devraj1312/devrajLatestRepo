@@ -1,0 +1,122 @@
+@use "../../../styles/variables.scss" as *;
+@use "sass:color";
+
+.cab-search-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -55px;
+  width: 100%;
+  z-index: 999;
+  margin: 0;
+  max-width: 1200px;
+}
+
+.cab-search-box {
+  width: 100%;
+  background: $white;
+
+  border: 2px solid color.adjust($light-gray, $lightness: 40%);
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.cab-fields {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  align-items: center;
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cab-field {
+  height: 82px;
+
+  padding: 10px 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+
+  &:last-child {
+    border-right: none;
+  }
+
+  label {
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 6px;
+
+    color: rgba($text, 0.8);
+  }
+
+  @media (max-width: 992px) {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
+
+.cab-input-group {
+  width: 85%;
+
+  height: 38px;
+
+  border: 1px solid rgba($text, 0.15);
+
+  border-radius: 8px;
+
+  padding: 0 12px;
+
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 100%;
+
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+}
+
+.cab-btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cab-search-btn {
+  width: 130px;
+  height: 42px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: $primary;
+  color: $white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  &:hover {
+    background: $secondary;
+  }
+}

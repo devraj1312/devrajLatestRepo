@@ -1,0 +1,368 @@
+@use "../../styles/variables.scss" as *;
+
+.darshan-hero {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: visible;
+
+  img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.75) 0%,
+      rgba(0, 0, 0, 0.45) 45%,
+      rgba(0, 0, 0, 0.15) 100%
+    );
+
+    .container {
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .hero-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 650px;
+
+    color: $white;
+
+    padding: 10px;
+
+    .hero-tag {
+      width: fit-content;
+
+      padding: 8px 16px;
+
+      border-radius: 50px;
+
+      background: rgba(255, 255, 255, 0.15);
+
+      backdrop-filter: blur(10px);
+
+      font-size: 13px;
+      font-weight: 600;
+
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1.1;
+
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+
+      color: rgba(255, 255, 255, 0.9);
+
+      margin-bottom: 15px;
+
+      max-width: 550px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    height: 340px;
+
+    .hero-content {
+      h1 {
+        font-size: 40px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 300px;
+
+    .hero-content {
+      h1 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+/* ==========================
+   PAGE CONTENT
+========================== */
+
+.darshan-booking-page {
+  padding: 80px 0 40px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: $text;
+    font-family: "Playfair Display", serif;
+
+    span {
+      color: $primary;
+    }
+  }
+}
+
+.darshan-booking-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 30px;
+  align-items: start;
+}
+
+.darshan-booking-grid {
+  display: grid;
+  gap: 25px;
+}
+
+.darshan-booking-summary {
+  position: sticky;
+  top: 100px;
+}
+
+.summary-card,
+.custom-request-card {
+  background: $white;
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid rgba($primary, 0.1);
+  box-shadow: 0 5px 20px rgba($primary, 0.08);
+}
+
+.custom-request-card {
+  margin-top: 20px;
+  text-align: center;
+
+  .request-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: rgba($warning, 0.12);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+  }
+
+  h4 {
+    color: $primary;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.selected-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.continue-btn,
+.custom-request-card button,
+.form-action button {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+
+  background: linear-gradient(
+    135deg,
+    $accent,
+    $secondary
+  );
+
+  color: $white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.custom-darshan-planner {
+  margin-top: 40px;
+}
+
+.planner-header {
+  text-align: center;
+  margin-bottom: 30px;
+
+  h2 {
+    color: $primary;
+    margin-bottom: 6px;
+  }
+
+  p {
+    color: $light-gray;
+  }
+}
+
+.planner-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr 280px 250px;
+  gap: 20px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.planner-card {
+  background: $white;
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid rgba($primary, .12);
+  box-shadow: 0 5px 20px rgba($primary,.08);
+
+  h4 {
+    margin-top: 0;
+    color: $primary;
+  }
+}
+
+.places-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+
+  label {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+.itinerary-item {
+  display: flex;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+
+  span {
+    font-size: 22px;
+    font-weight: 700;
+    color: $primary;
+  }
+
+  h5 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    color: #777;
+  }
+}
+
+.trip-card {
+  select {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+  }
+}
+
+.summary-card {
+  ul {
+    padding-left: 18px;
+    color: #666;
+  }
+
+  .cost {
+    font-size: 28px;
+    font-weight: 700;
+    color: $primary;
+    margin: 20px 0;
+  }
+}
+
+.save-btn,
+.planner-card button {
+  width: 100%;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    $accent,
+    $secondary
+  );
+
+  color: $white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+
+  .darshan-booking-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .darshan-booking-summary {
+    position: static;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: span 1;
+  }
+}

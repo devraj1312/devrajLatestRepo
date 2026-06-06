@@ -1,0 +1,125 @@
+@use "../../styles/variables.scss" as *;
+
+.why-choose {
+  position: relative;
+  overflow: hidden;
+
+  padding-top: 10px;
+  margin-bottom: 20px;
+
+    background: linear-gradient(
+        rgba($secondary2, 0.90),
+        rgba($secondary2, 0.80)
+    ),
+    url("/src/assets/images/ujjain11.png");
+
+    background-size: cover;
+    background-position: center 40%;
+    background-repeat: no-repeat;
+}
+
+.why-choose .container {
+  // max-width: 1000px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.why-heading {
+  text-align: center;
+  margin-bottom: 0px;
+
+  h2 {
+    color: $white;
+    font-size: 34px;
+    font-weight: 700;
+    margin-bottom: 0px;
+    margin-top: 25px;
+    font-family: "Playfair Display", serif;
+
+    span {
+      color: $warning;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 34px;
+    }
+  }
+
+  // p {
+  //   max-width: 600px;
+  //   margin: auto;
+  //   color: rgba($white, 0.85);
+  //   line-height: 1.8;
+  //   font-size: 16px;
+  // }
+
+  .heading-decoration {
+    text-align: center;
+    color: $warning;
+    font-size: 20px;
+    margin: 0px;
+    // margin-top: 0px;
+    // letter-spacing: 2px;
+  }
+}
+
+.why-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 15px;
+  // gap: 35px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.why-item {
+  position: relative;
+  padding: 0 30px;
+  text-align: center;
+
+  &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 2px;
+    height: 80%;
+    background: $light-gray;
+  }
+}
+
+.image-circle {
+  margin: 0 auto 15px;
+  overflow: hidden;
+  margin-bottom: 0px;
+
+  img {
+    width: 90%;
+    height: 100%;
+    object-fit: contain; 
+  }
+}
+
+.why-item h3 {
+  color: $warning;
+  font-size: 26px;
+  font-weight: 600;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family: "Playfair Display", serif;
+}
+
+.why-item p {
+  color: rgba($white, 0.85);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}

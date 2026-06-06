@@ -1,0 +1,125 @@
+@use "../../styles/variables.scss" as *;
+@use "sass:color";
+
+/* FEATURED HOTELS */
+.featured-hotels-wrapper {
+  background: $white;
+  width: 100%;
+}
+
+.featured-hotels {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: 28px;
+      font-weight: bold;
+      color: $text;
+      margin: 5px 0;
+    }
+
+    p {
+      color: $light-gray;
+      margin: 5px 0;
+    }
+
+    .view-all-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      border: none;
+      color: $primary;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        color: color.adjust($primary, $lightness: -10%);
+      }
+    }
+  }
+
+  .hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+/* CAB */
+.cab-wrapper {
+  background: #d8e6fa2e;
+  width: 100%;
+}
+
+.cab-services {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Shared header */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 10px;
+
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: $text;
+    margin: 5px 0;
+  }
+
+  p {
+    color: $light-gray;
+    margin-top: 5px;
+  }
+
+  .view-all-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    color: $primary;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover {
+      color: color.adjust($primary, $lightness: -10%);
+    }
+  }
+}
+
+/* Cab Grid */
+.cab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}

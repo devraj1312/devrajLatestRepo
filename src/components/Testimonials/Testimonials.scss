@@ -1,0 +1,164 @@
+@use "../../styles/variables.scss" as *;
+
+.testimonials-section {
+  padding: 40px 0;
+  background: $bg;
+}
+
+/* HEADER */
+
+.testimonials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+
+  h2 {
+    font-size: 34px;
+    font-weight: 700;
+    color: $text;
+    margin: 0;
+    font-family: "Playfair Display", serif;
+
+    span {
+      color: $primary;
+    }
+  }
+
+  .view-all-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: $primary;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s;
+
+    &:hover {
+      color: $accent;
+
+      svg {
+        transform: translateX(4px);
+      }
+    }
+
+    svg {
+      transition: 0.3s;
+    }
+  }
+}
+
+/* GRID */
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARD */
+
+.testimonial-card {
+  background: $white;
+  border-radius: 16px;
+  padding: 20px;
+
+  border: 1px solid rgba($primary, 0.1);
+
+  box-shadow: 0 5px 15px rgba($primary, 0.06);
+
+  transition: 0.3s;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba($primary, 0.1);
+  }
+
+  p {
+    margin: 15px 0 0;
+    color: $light-gray;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+/* TOP */
+
+.testimonial-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  h4 {
+    margin: 0 0 6px;
+    color: $secondary2;
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+/* EMOJI */
+
+.emoji {
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba($warning, 0.12);
+
+  font-size: 28px;
+}
+
+/* RATING */
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  svg {
+    color: $warning;
+    font-size: 14px;
+  }
+
+  span {
+    margin-left: 5px;
+    color: $secondary2;
+    font-weight: 600;
+  }
+}
+
+/* DOTS */
+
+.testimonial-dots {
+  margin-top: 22px;
+
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  span {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: rgba($primary, 0.25);
+  }
+
+  .active {
+    background: $primary;
+  }
+}

@@ -1,0 +1,140 @@
+@use "../../../styles/variables.scss" as *;
+@use "sass:color";
+
+.pooja-search-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -55px;
+  width: 100%;
+  z-index: 999;
+  margin: 0;
+  max-width: 1200px;
+}
+
+.pooja-search-box {
+  width: 100%;
+  background: $white;
+
+  border: 2px solid color.adjust($light-gray, $lightness: 40%);
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.pooja-fields {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  align-items: center;
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pooja-field {
+  height: 82px;
+
+  padding: 10px 16px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+
+  &:last-child {
+    border-right: none;
+  }
+
+  label {
+    font-size: 13px;
+    font-weight: 600;
+
+    margin-bottom: 6px;
+
+    color: rgba($text, 0.8);
+  }
+
+  @media (max-width: 992px) {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+}
+
+.pooja-input-group {
+  width: 85%;
+  height: 38px;
+
+  border: 1px solid rgba($text, 0.15);
+
+  border-radius: 8px;
+
+  padding: 0 12px;
+
+  display: flex;
+  align-items: center;
+
+  input,
+  select {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+}
+
+.pooja-select-group {
+  position: relative;
+
+  select {
+    appearance: none;
+    cursor: pointer;
+    padding-right: 24px;
+  }
+
+  .select-arrow {
+    position: absolute;
+    right: 12px;
+    font-size: 12px;
+    pointer-events: none;
+    color: rgba($text, 0.7);
+  }
+}
+
+.pooja-btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pooja-search-btn {
+  width: 130px;
+  height: 42px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: $primary;
+  color: $white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+
+  &:hover {
+    background: $secondary;
+  }
+}

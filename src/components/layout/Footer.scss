@@ -1,0 +1,229 @@
+@use "../../styles/variables.scss" as *;
+
+.footer {
+  background: linear-gradient(
+    135deg,
+    $secondary2,
+    $primary
+  );
+
+  color: $white;
+
+  .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+/* =========================
+   GRID
+========================= */
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.3fr;
+  gap: 40px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* =========================
+   COLUMN
+========================= */
+
+.footer-column {
+  position: relative;
+
+  &:not(:last-child)::after {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    right: -20px;
+
+    width: 1px;
+    height: 100%;
+
+    background: rgba($white, 0.12);
+  }
+
+  @media (max-width: 768px) {
+    &:not(:last-child)::after {
+      display: none;
+    }
+  }
+
+  h4 {
+    font-size: 22px;
+    font-weight: 600;
+
+    margin-bottom: 18px;
+
+    color: $white;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    a {
+      text-decoration: none;
+      color: rgba($white, 0.85);
+
+      font-size: 16px;
+     
+
+      transition: all 0.3s ease;
+
+      &:hover {
+        // color: $accent;
+        padding-left: 4px;
+         font-weight: 600;
+      }
+    }
+  }
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin-bottom: 18px;
+
+  img {
+    height: 110px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 34px;
+    font-weight: 700;
+    color: $warning;
+    font-family: "Playfair Display", serif;
+  }
+
+  span {
+    font-size: 15px;
+    color: rgba($white, 0.9);
+  }
+}
+
+/* =========================
+   COMPANY INFO
+========================= */
+
+.company-info {
+  p {
+    color: rgba($white, 0.85);
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+    max-width: 300px;
+  }
+}
+
+/* =========================
+   SOCIAL ICONS
+========================= */
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+
+  a {
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba($white, 0.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: $white;
+
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $accent;
+      border-color: $accent;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+/* =========================
+   CONTACT INFO
+========================= */
+
+.contact-info {
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    color: rgba($white, 0.85);
+
+    line-height: 1.7;
+    font-size: 15px;
+
+    svg {
+      color: $white;
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+/* =========================
+   FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+  margin-top: 35px;
+  padding-top: 20px;
+
+  border-top: 1px solid rgba($white, 0.12);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: rgba($white, 0.8);
+
+  font-size: 14px;
+
+  span:last-child {
+    color: rgba($white, 0.9);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}

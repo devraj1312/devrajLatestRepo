@@ -1,0 +1,293 @@
+@use "../../styles/variables.scss" as *;
+@use "sass:color";
+
+.user-profile-section {
+  max-width: 900px;
+  margin: 30px auto 20px;
+  padding: 0 20px;
+}
+
+.profile-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: $white;
+  padding: 20px;
+  border-radius: 16px;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+
+  .profile-avatar {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: $primary;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .profile-details {
+    h2 {
+      font-size: 22px;
+      margin-bottom: 4px;
+    }
+
+    p {
+      font-size: 14px;
+      color: $light-gray;
+    }
+
+    span {
+      display: block;
+      margin-top: 4px;
+      font-size: 13px;
+      color: $text;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px;
+
+    .profile-avatar {
+      width: 55px;
+      height: 55px;
+      font-size: 20px;
+    }
+
+    .profile-details h2 {
+      font-size: 18px;
+    }
+  }
+}
+
+.bookings-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
+
+  p {
+    color: $light-gray;
+    margin-bottom: 20px;
+  }
+
+  /* TABS */
+  .tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+
+    button {
+      padding: 10px 15px;
+      border-radius: 10px;
+      border: 1px solid $light-gray;
+      background: $white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      &.active {
+        background: $primary;
+        color: $white;
+        border: none;
+      }
+    }
+  }
+
+  /* CARD */
+  .booking-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    background: $white;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .left {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+
+      .icon-box {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.hotel {
+          background: #dbeafe;
+          color: $primary;
+        }
+
+        &.cab {
+          background: #fef3c7;
+          color: #f59e0b;
+        }
+      }
+
+      h3 {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      p {
+        margin: 3px 0;
+        font-size: 13px;
+      }
+
+      .meta {
+        display: flex;
+        gap: 15px;
+        font-size: 13px;
+        color: $light-gray;
+
+        span {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+    }
+
+    .right {
+      display: flex;                 // 🔥 important
+      flex-direction: column;        // column layout
+      justify-content: space-between;
+      align-items: flex-end;
+      text-align: right;
+      min-height: 100%; 
+
+      .status {
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        display: inline-block;
+        align-self: flex-end;
+
+        &.confirmed {
+          background: color.adjust($success, $lightness: 50%);
+          color: $success;
+        }
+
+        &.completed {
+          background: color.adjust($primary, $lightness: 40%);
+          color: $primary;
+        }
+
+        &.pending {
+          background: color.adjust($warning, $lightness: 35%);
+          color: color.adjust($warning, $lightness: -10%);
+        }
+
+        &.cancelled {
+          background: color.adjust($danger, $lightness: 45%);
+          color: $danger;
+        }
+      }
+
+      small {
+        display: block;
+        color: $light-gray;
+      }
+
+      .cancel-btn {
+        padding: 6px 12px;
+        background: #ff4d4f;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 13px;
+        align-self: flex-end;
+
+        &:hover {
+          background: #d9363e;
+        }
+
+        // ✅ Disabled state
+        &.disabled {
+          background: #ccc;
+          color: #666;
+          cursor: not-allowed;
+
+          &:hover {
+            background: #ccc;
+          }
+        }
+      }
+
+.cancel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cancel-msg {
+  font-size: 11px;
+  color: $danger;
+  white-space: nowrap;
+}
+    }
+  }
+
+  @media (max-width: 768px) {
+    .booking-card {
+      flex-direction: column; // 🔥 1 column layout
+      align-items: flex-start;
+      gap: 10px;
+
+      .right {
+        width: 100%;
+        flex-direction: row; // 🔥 same row
+        justify-content: space-between;
+        align-items: center;
+
+        .status {
+          align-self: auto;
+        }
+
+        .cancel-btn {
+          align-self: auto;
+        }
+      }
+    }
+  }
+
+  .no-data {
+    text-align: center;
+    color: $light-gray;
+    margin-top: 40px;
+  }
+
+  .hotel-details,
+  .cab-details {
+    p {
+      margin: 4px 0;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+  }
+}
