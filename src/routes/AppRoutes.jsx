@@ -9,6 +9,8 @@ import Darshan from "../pages/Darshan/Darshan";
 import Bookings from "../pages/Bookings/Bookings";
 import Help from "../pages/Help/Help";
 import About from "../pages/About/About";
+import CustomDarshanPlanner from "../pages/CustomDarshanPlanner/CustomDarshanPlanner";
+import InquiryForm from "../pages/InquiryForm/InquiryForm";
 
 // 👇 NEW IMPORTS
 import Login from "../pages/Auth/Login";
@@ -77,13 +79,22 @@ const AppRoutes = () => (
           <HotelBooking />
         </Layout>
       }
-    />
+    /> 
 
     <Route
       path="/cabs/:id"
       element={
         <Layout>
           <Cabs  />
+        </Layout>
+      }
+    />
+
+    <Route
+      path="/custom-darshan-planner"
+      element={
+        <Layout>
+          <CustomDarshanPlanner />
         </Layout>
       }
     />
@@ -114,6 +125,15 @@ const AppRoutes = () => (
       element={
         <Layout>
           <About />
+        </Layout>
+      }
+    />
+
+    <Route
+      path="/inquiry-form"
+      element={
+        <Layout>
+          <InquiryForm />
         </Layout>
       }
     />

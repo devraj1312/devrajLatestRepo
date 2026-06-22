@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import AppRoutes from "./routes/AppRoutes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 // 🔥 NEW COMPONENT (Global Auth Checker)
 const AuthChecker = () => {
@@ -31,6 +32,7 @@ const AuthChecker = () => {
 
 const App = () => (
   <BrowserRouter>
+  <ScrollToTop />
   <AuthChecker />
     <AppRoutes />
 

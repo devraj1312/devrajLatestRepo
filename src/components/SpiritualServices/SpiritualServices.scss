@@ -32,6 +32,12 @@
     gap: 30px;
   }
 
+  .service-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
   .service-card {
     background: $white;
     border-radius: 18px;

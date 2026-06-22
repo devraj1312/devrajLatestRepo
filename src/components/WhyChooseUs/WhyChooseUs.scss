@@ -19,7 +19,6 @@
 }
 
 .why-choose .container {
-  // max-width: 1000px;
   margin: auto;
   position: relative;
   z-index: 2;
@@ -42,25 +41,15 @@
     }
 
     @media (max-width: 768px) {
-      font-size: 34px;
+      font-size: 28px;
     }
   }
-
-  // p {
-  //   max-width: 600px;
-  //   margin: auto;
-  //   color: rgba($white, 0.85);
-  //   line-height: 1.8;
-  //   font-size: 16px;
-  // }
 
   .heading-decoration {
     text-align: center;
     color: $warning;
     font-size: 20px;
     margin: 0px;
-    // margin-top: 0px;
-    // letter-spacing: 2px;
   }
 }
 
@@ -68,7 +57,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin-bottom: 15px;
-  // gap: 35px;
 
   @media (max-width: 992px) {
     grid-template-columns: repeat(2, 1fr);
@@ -76,7 +64,7 @@
   }
 
   @media (max-width: 576px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -96,6 +84,21 @@
   }
 }
 
+
+@media (max-width: 576px) {
+  .why-item::after {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .why-item {
+    padding: 0 8px;
+      p {
+        display: none;
+      }
+  }
+}
 .image-circle {
   margin: 0 auto 15px;
   overflow: hidden;
@@ -106,7 +109,14 @@
     height: 100%;
     object-fit: contain; 
   }
+  @media (max-width: 576px) {
+    img{
+      width: 110%;
+     height: 100%;
+    }
+  }
 }
+
 
 .why-item h3 {
   color: $warning;
@@ -115,6 +125,11 @@
   margin-top: 0px;
   margin-bottom: 0px;
   font-family: "Playfair Display", serif;
+}
+@media (max-width: 576px) {
+  .why-item h3 {
+    font-size: 20px;
+  }
 }
 
 .why-item p {

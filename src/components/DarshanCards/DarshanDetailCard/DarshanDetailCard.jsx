@@ -1,8 +1,9 @@
+import { useState } from "react";
 import "./DarshanDetailCard.scss";
 import {
   FaClock,
   FaCheckCircle,
-  FaCar,
+  // FaCar,
   FaMapMarkerAlt,
   FaUserTie,
   FaShieldAlt,
@@ -11,7 +12,20 @@ import {
 const DarshanDetailCard = ({
   darshan,
   buttonText = "+ Add",
+  onAdd,
+  onNext,
 }) => {
+  const [isAdded, setIsAdded] = useState(false);
+
+  const handleClick = () => {
+    if (!isAdded) {
+      onAdd(darshan);
+      setIsAdded(true);
+    } else {
+      onNext();
+    }
+  };
+
   return (
     <div className="darshan-detail-card">
 
@@ -26,12 +40,7 @@ const DarshanDetailCard = ({
 
         <div className="darshan-info">
 
-          <h3>{darshan.name}</h3>
-
-          <div className="duration">
-            <FaClock />
-            <span>{darshan.duration}</span>
-          </div>
+          <h3>{darshan.name} </h3>
 
           {darshan.description && (
             <p className="description">
@@ -90,14 +99,22 @@ const DarshanDetailCard = ({
 
         <div className="darshan-price">
 
+          <div className="duration">
+            <FaClock />
+            <span>{darshan.duration}</span>
+          </div>
+
           <div className="price">
             ₹{darshan.price}
             <span>/ Person</span>
           </div>
 
-          <button>
+          {/* <button onClick={() => onAdd(darshan)} >
             {buttonText}
-          </button>
+          </button> */}
+            <button onClick={handleClick}>
+              {isAdded ? "Next" : buttonText}
+            </button>
 
         </div>
 
