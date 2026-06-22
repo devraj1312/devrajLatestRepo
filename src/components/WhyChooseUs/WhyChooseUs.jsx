@@ -36,11 +36,6 @@ const WhyChooseUs = () => {
             ༺ ━━━━━━ 𑁍 ━━━━━━━ ༻
           </p>
 
-          {/* <p>
-            Experience a seamless spiritual journey with trusted services,
-            local expertise and verified travel partners.
-          </p> */}
-
         </div>
 
         <div className="why-features">

@@ -14,7 +14,7 @@ const DarshanCard = ({ item }) => {
 
       <div className="darshan-package-content">
 
-        <h3>{item.title}</h3>
+        <h3>{item.name}</h3>
 
         <span className="darshan-duration">
           <FaClock />
@@ -22,11 +22,11 @@ const DarshanCard = ({ item }) => {
           {item.duration}
         </span>
 
-        <p>{item.temple}</p>
+        {/* <p>{item.description}</p> */}
 
         <div className="darshan-package-footer">
 
-          <div className="darshan-price">
+          <div className="card-darshan-price">
             ₹{item.price}
             {item.price !== "Custom" && (
               <span>/ Person</span>

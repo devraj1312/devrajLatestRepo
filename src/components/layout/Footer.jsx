@@ -51,7 +51,7 @@ const Footer = () => {
 
           {/* Quick Links */}
 
-          <div className="footer-column">
+          <div className="footer-column quick-links-column">
 
             <h4>Quick Links</h4>
 
@@ -69,7 +69,7 @@ const Footer = () => {
 
           {/* Services */}
 
-          <div className="footer-column">
+          <div className="footer-column services-column">
 
             <h4>Our Services</h4>
 

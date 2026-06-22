@@ -2,47 +2,22 @@ import "./DarshanPackages.scss";
 import { FaMapMarkerAlt, FaCar, FaUserTie, FaClock } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 import DarshanCard from "../DarshanCards/DarshanCard/DarshanCard";
-
-const packages = [
-  {
-    image: "/src/assets/images/dershan1.png",
-    title: "Ujjain Darshan",
-    duration: "1 Day",
-    temple: "Mahakaleshwar, Harsiddhi, Mangalnath",
-    price: "1999"
-  },
-  {
-    image: "/src/assets/images/ujjain2.png",
-    title: "Kal Bhairav",
-    duration: "Half Day",
-    temple: "Shri Kal Bhairav Temple",
-    price: "899"
-  },
-  {
-    image: "/src/assets/images/ujjain3.png",
-    title: "Omkareshwar",
-    duration: "1 Day",
-    temple: "Omkareshwar Jyotirlinga",
-    price: "2499"
-  },
-  {
-    image: "/src/assets/images/ujjain4.png",
-    title: "Baglamukhi",
-    duration: "Half Day",
-    temple: "Maa Baglamukhi Temple",
-    price: "1299"
-  },
-  {
-    image: "/src/assets/images/ujjain5.png",
-    title: "Custom Planner",
-    duration: "Flexible",
-    temple: "Create your own itinerary",
-    price: "Custom",
-    isCustom: true
-  }
-];
+import { darshanData } from "../../data/darshanData";
 
 const DarshanPackages = () => {
+  const normalPackages = darshanData
+    .filter(item => !item.isCustom)
+    .slice(0, 4);
+
+  const customPackage = darshanData.find(
+    item => item.isCustom
+  );
+
+  const homePackages = [
+    ...normalPackages,
+    ...(customPackage ? [customPackage] : [])
+  ];
+
   return (
     <section className="darshan-packages-section">
 
@@ -53,7 +28,7 @@ const DarshanPackages = () => {
             Top Darshan <span>Packages</span>
           </h2>
 
-           <a href="/darshan-packages" className="view-all-link">
+           <a href="/darshan" className="view-all-link">
             View All Packages
             <FiArrowRight />
           </a>
@@ -65,12 +40,23 @@ const DarshanPackages = () => {
 
         <div className="darshan-packages-grid">
 
-          {packages.map((item, index) => (
+          {darshanData.slice(0, 4).map((item) => (
             <DarshanCard
-              key={index}
+              key={item.id}
               item={item}
             />
           ))}
+
+          {/* Custom Card */}
+          <DarshanCard
+            item={{
+              image: "/src/assets/images/ujjain10.png",
+              name: "Custom Darshan Planner",
+              duration: "Flexible",
+              price: "Custom",
+              isCustom: true,
+            }}
+          />
 
         </div>
 
