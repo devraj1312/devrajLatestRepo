@@ -69,24 +69,16 @@
 
 .temple-suggestions {
   position: absolute;
-
   top: calc(100% + 6px);
   left: 0;
-
   width: 100%;
-
   background: #fff;
-
   border-radius: 10px;
-
   overflow: hidden;
-
   box-shadow: 0 8px 20px
     rgba($secondary, 0.12);
-
   border: 1px solid
     color.adjust($secondary, $lightness: 68%);
-
   z-index: 99999;
 }
 
