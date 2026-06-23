@@ -13,6 +13,7 @@ const InquiryForm = () => {
   useEffect(() => {
     setCategory(state?.category || "");
 
+    // Darshan
     if (state?.selectedPackages?.length) {
       const packageList = state.selectedPackages
         .map(
@@ -22,9 +23,28 @@ const InquiryForm = () => {
         .join("\n");
 
       setDescription(
-        `Selected Darshan Packages:\n${packageList}\nTotal Amount: ₹${state.totalAmount}`
+        `Selected Darshan Packages:\n${packageList}\n\nTotal Amount: ₹${state.totalAmount}`
       );
+
+      return;
     }
+
+    // Pooja
+    if (state?.selectedPoojas?.length) {
+      const poojaList = state.selectedPoojas
+        .map(
+          (item) =>
+            `${item.name} - ₹${item.price}`
+        )
+        .join("\n");
+
+      setDescription(
+        `Selected Poojas:\n${poojaList}\n\nTotal Amount: ₹${state.totalAmount}`
+      );
+
+      return;
+    }
+
   }, [state]);
 
   return (
@@ -117,6 +137,7 @@ const InquiryForm = () => {
                 <textarea
                     rows="6"
                     value={description}
+                    readOnly
                     onChange={(e) =>
                     setDescription(e.target.value)
                     }

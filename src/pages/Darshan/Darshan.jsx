@@ -155,6 +155,11 @@ const Darshan = () => {
                         darshan={darshan}
                         onAdd={handleAddPackage}
                         onNext={scrollToSummary}
+                        isAdded={
+                          selectedPackages.some(
+                            (item) => item.id === darshan.id
+                          )
+                        }
                       />
                     ))
                   ) : (
