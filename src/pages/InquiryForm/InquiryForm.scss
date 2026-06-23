@@ -20,7 +20,6 @@
   .hero-overlay {
     position: absolute;
     inset: 0;
-
     background: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.75) 0%,
@@ -30,57 +29,42 @@
   }
 
   .container {
-    height: 100%;
+    height: 110%;
     display: flex;
     align-items: center;
   }
 
   .hero-content {
-  flex: 1;
+    flex: 1;
+    max-width: 650px;
+    color: $white;
+    padding: 10px;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    .hero-tag {
+      width: fit-content;
+      padding: 8px 16px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
 
-  max-width: 650px;
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin: 20px 0 10px;
+      line-height: 1.1;
+    }
 
-  color: $white;
-  padding: 10px;
-
-  .hero-tag {
-    width: fit-content;
-
-    padding: 8px 16px;
-
-    border-radius: 50px;
-
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-
-    font-size: 13px;
-    font-weight: 600;
-
-    margin-bottom: 15px;
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 550px;
+    }
   }
-
-  h1 {
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 1.1;
-
-    margin: 20px 0 10px;
-  }
-
-  p {
-    font-size: 16px;
-    line-height: 1.8;
-
-    color: rgba(255, 255, 255, 0.9);
-
-    margin-bottom: 15px;
-    max-width: 550px;
-  }
-}
 }
 
 /* ==========================
@@ -89,37 +73,37 @@
 
 .inquiry-section {
   position: relative;
-  margin-top: -50px;
+  margin-top: 20px;
   padding-bottom: 80px;
 }
 
 .inquiry-card {
-  max-width: 600px;
-
+  max-width: 850px;
   margin: auto;
-
-  background: $white;
-
-  border-radius: 22px;
-
   padding: 30px;
-
-  box-shadow: 0 15px 40px rgba($primary, 0.12);
-
+  background: $white;
+  border-radius: 22px;
   border: 1px solid rgba($primary, 0.08);
+  box-shadow: 0 15px 40px rgba($primary, 0.12);
 }
 
-.card-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.inquiry-heading {
+  max-width: 850px;
+  margin: 0 auto 25px;
 
-  margin-bottom: 30px;
+  text-align: center;
+
+  .heading-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
 
   .icon-box {
-    width: 65px;
-    height: 65px;
-
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
 
     background: rgba($primary, 0.1);
@@ -129,92 +113,149 @@
     justify-content: center;
 
     color: $primary;
-    font-size: 24px;
+    font-size: 20px;
   }
 
   h2 {
+    margin: 0;
     color: $secondary;
-    margin-bottom: 5px;
-    font-size: 30px;
+    font-size: 32px;
     font-family: "Playfair Display", serif;
   }
 
   p {
     color: #777;
+    margin: 0;
   }
 }
 
-.form-group {
+/* ==========================
+   GRID LAYOUT
+========================== */
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+/* ==========================
+   FORM FIELDS
+========================== */
+
+.inquiry-form-group {
   margin-bottom: 20px;
 
   label {
     display: block;
     margin-bottom: 8px;
-
     font-weight: 600;
     color: $text;
   }
 
   input,
-  textarea {
-    width: 90%;
+  textarea,
+  select {
+    width: 100%;
     border: 1px solid #dbe3ef;
     border-radius: 12px;
     padding: 14px;
     font-size: 15px;
     outline: none;
-    transition: 0.3s;
+    transition: 0.3s ease;
+    background: $white;
+    box-sizing: border-box;
+
+    &:focus {
+      border-color: $primary;
+    }
   }
 
-  input:focus,
-  textarea:focus {
-    border-color: $primary;
+  textarea {
+    resize: vertical;
+  }
+
+  select {
+    cursor: pointer;
   }
 }
 
 .phone-input {
-  width: 90%;
   display: flex;
   align-items: center;
+  width: 90%;
   border: 1px solid #dbe3ef;
   border-radius: 12px;
   padding: 0 15px;
 
   svg {
     color: $primary;
+    flex-shrink: 0;
   }
 
   input {
+    width: 100%;
     border: none;
     box-shadow: none;
+    background: transparent;
+
+    &:focus {
+      border: none;
+    }
   }
 }
 
+/* ==========================
+   BUTTON
+========================== */
+
 .submit-btn {
-  width: 95%;
+  width: 100%;
   height: 55px;
-
   border: none;
-
   border-radius: 12px;
-
   background: linear-gradient(
     135deg,
     $accent,
     $secondary
   );
-
   color: $white;
-
   font-size: 16px;
   font-weight: 600;
-
   cursor: pointer;
 
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+
+  transition: 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 768px) {
+  .two-col,
+  .three-col {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .inquiry-card {
+    padding: 22px;
+  }
 }
 
 /* ==========================
@@ -222,12 +263,19 @@
 ========================== */
 
 @media (max-width: 480px) {
-
   .inquiry-hero {
     height: 240px;
 
-    .hero-content {
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 135%;
+      object-fit: cover;
+      margin-top: -35px;
+    }
 
+    .hero-content {
       .hero-tag {
         font-size: 10px;
       }
@@ -243,8 +291,8 @@
   }
 
   .inquiry-section {
-    margin-top: -70px;
-    padding-bottom: 40px;
+    margin-top: 30px;
+    padding-bottom: 20px;
   }
 
   .inquiry-card {
@@ -252,28 +300,29 @@
     border-radius: 18px;
   }
 
-  .card-header {
-    gap: 12px;
+ .inquiry-heading {
+    margin-bottom: 20px;
 
     .icon-box {
       width: 50px;
       height: 50px;
       font-size: 18px;
+      margin-bottom: 12px;
     }
 
     h2 {
-      font-size: 20px;
+      font-size: 24px;
     }
 
     p {
-      font-size: 12px;
+      font-size: 16px;
     }
   }
 
-  .form-group {
-
+  .inquiry-form-group {
     input,
-    textarea {
+    textarea,
+    select {
       padding: 12px;
       font-size: 14px;
     }

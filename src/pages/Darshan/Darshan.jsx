@@ -202,7 +202,6 @@ const Darshan = () => {
                       className="selected-item"
                     >
                       <span>{item.name}</span>
-
                       <div className="selected-price">
                         <strong>
                           ₹{item.price}

@@ -45,6 +45,21 @@ const InquiryForm = () => {
       return;
     }
 
+    // Cab Booking
+    if (state?.selectedCab) {
+      setDescription(
+    `Selected Cab: ${state.selectedCab.name}
+
+    Pickup Location: ${state.pickup}
+
+    Drop Location: ${state.drop}
+
+    Rate: ₹${state.selectedCab.price}/km`
+      );
+
+      return;
+    }
+
   }, [state]);
 
   return (
@@ -80,68 +95,78 @@ const InquiryForm = () => {
       <section className="inquiry-section">
         <div className="container">
 
-          <div className="inquiry-card">
-
-            <div className="card-header">
-
+          <div className="inquiry-heading">
+            <div className="heading-top">
               <div className="icon-box">
                 <FaPaperPlane />
               </div>
 
-              <div>
-                <h2>Send Us Your Inquiry</h2>
-                <p>
-                  We will get back to you as soon as possible.
-                </p>
-              </div>
-
+              <h2>Send Us Your Inquiry</h2>
             </div>
 
+            <p>
+              We will get back to you as soon as possible.
+            </p>
+          </div>
+
+          <div className="inquiry-card">
             <form>
-
-              <div className="form-group">
-                <label>Full Name</label>
-
-                <input
-                  type="text"
-                  placeholder="Enter your full name"
-                />
-              </div>
-
-              <div className="form-group">
-                <label>Phone Number</label>
-
-                <div className="phone-input">
-                  <FaPhoneAlt />
+              <div className="form-row two-col">
+                <div className="inquiry-form-group">
+                  <label>Full Name</label>
                   <input
-                    type="tel"
-                    placeholder="Enter your phone number"
+                    type="text"
+                    placeholder="Enter your full name"
                   />
+                </div>
+
+                <div className="inquiry-form-group">
+                  <label>Phone Number</label>
+
+                  <div className="phone-input">
+                    <FaPhoneAlt />
+                    <input
+                      type="tel"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
                 </div>
               </div>
 
-              <div className="form-group">
-                <label>Category</label>
-
-                <input
+              <div className="form-row three-col">
+                <div className="inquiry-form-group">
+                  <label>Category</label>
+                  <input
                     type="text"
                     value={category}
                     readOnly
-                    placeholder="Category"
-                />
+                  />
+                </div>
+
+                <div className="inquiry-form-group">
+                  <label>Date</label>
+                  <input type="date" />
+                </div>
+
+                <div className="inquiry-form-group">
+                  <label>Time</label>
+
+                  <select>
+                    <option>Select Time</option>
+                    <option>Morning</option>
+                    <option>Afternoon</option>
+                    <option>Evening</option>
+                  </select>
+                </div>
               </div>
 
-              <div className="form-group">
+              <div className="inquiry-form-group">
                 <label>Description</label>
 
                 <textarea
-                    rows="6"
-                    value={description}
-                    readOnly
-                    onChange={(e) =>
-                    setDescription(e.target.value)
-                    }
-                    placeholder="Enter your message here..."
+                  rows="6"
+                  value={description}
+                  readOnly
                 />
               </div>
 
@@ -151,11 +176,8 @@ const InquiryForm = () => {
               >
                 Submit <FaPaperPlane />
               </button>
-
             </form>
-
           </div>
-
         </div>
       </section>
     </>
