@@ -9,10 +9,8 @@
   img {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
   }
 
@@ -56,7 +54,7 @@
     }
 
     h1 {
-      font-size: 52px;
+      font-size: 48px;
       font-weight: 700;
       line-height: 1.1;
       margin-bottom: 10px;
@@ -69,30 +67,6 @@
       color: rgba(255, 255, 255, 0.9);
       margin-bottom: 15px;
       max-width: 550px;
-    }
-  }
-
-  @media (max-width: 992px) {
-    height: 340px;
-
-    .hero-content {
-      h1 {
-        font-size: 40px;
-      }
-    }
-  }
-
-  @media (max-width: 768px) {
-    height: 300px;
-
-    .hero-content {
-      h1 {
-        font-size: 30px;
-      }
-
-      p {
-        font-size: 14px;
-      }
     }
   }
 }
@@ -258,135 +232,123 @@
   cursor: pointer;
 }
 
-@media (max-width: 1200px) {
-  .pooja-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 992px) {
-  .pooja-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .pooja-summary {
-    position: static;
-  }
-}
-
 @media (max-width: 768px) {
-  .pooja-grid {
-    grid-template-columns: 1fr;
+
+  .pooja-booking-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .section-heading h2 {
-    font-size: 28px;
+  .pooja-services {
+    width: 100%;
+    order: 1;
   }
+
+  .pooja-booking-summary {
+    width: 100%;
+    order: 2;
+    position: static;
+    top: unset;
+  }
+
+  .pooja-booking-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
 }
 
-.custom-pooja-form {
-  margin-top: 40px;
+/* =========================
+   MOBILE
+========================= */
 
-  background: $white;
+@media (max-width: 480px) {
 
-  border-radius: 20px;
+  .pooja-hero {
+    height: 220px;
 
-  padding: 25px;
+    img {
+      height: 155%;
+      margin-top: -55px;
+    }
 
-  border: 1px solid rgba($primary, 0.1);
+    .hero-content {
+      max-width: 100%;
+      padding: 10px 5px;
 
-  box-shadow: 0 5px 20px rgba($primary, 0.08);
+      .hero-tag {
+        font-size: 10px;
+        padding: 5px 10px;
+        margin-top: 25px;
+        margin-bottom: 8px;
+      }
 
-  .form-header {
-    margin-bottom: 25px;
+      h1 {
+        font-size: 26px;
+        line-height: 1.2;
+        margin: 6px 0;
+      }
 
-    h3 {
-      margin: 0 0 5px;
-      color: $primary;
+      p {
+        font-size: 14px;
+        line-height: 1.5;
+        max-width: 90%;
+      }
+    }
+  }
+
+  .pooja-booking-page {
+    padding: 30px 0 15px;
+  }
+
+  .section-heading {
+    margin-bottom: 15px;
+
+    h2 {
+      font-size: 26px;
+      margin-top: 40px;
+    }
+  }
+
+  .pooja-booking-grid {
+    gap: 15px;
+  }
+
+  .summary-card,
+  .custom-request-card {
+    padding: 12px;
+  }
+
+  .custom-request-card {
+
+    .request-icon {
+      width: 45px;
+      height: 45px;
+      font-size: 20px;
+    }
+
+    h4 {
+      font-size: 15px;
     }
 
     p {
-      color: #666;
-      margin: 0;
+      font-size: 12px;
     }
   }
 
-  .form-grid {
-    display: grid;
-
-    grid-template-columns:
-      repeat(3, 1fr);
-
-    gap: 18px;
-
-    @media (max-width: 992px) {
-      grid-template-columns: 1fr;
-    }
+  .selected-item {
+    font-size: 13px;
   }
 
-  .form-group {
-    display: flex;
-    flex-direction: column;
-
-    label {
-      margin-bottom: 8px;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 90%;
-
-      padding: 12px;
-
-      border: 1px solid #ddd;
-
-      border-radius: 10px;
-
-      outline: none;
-    }
-
-    textarea {
-      resize: vertical;
-    }
+  .summary-total {
+    font-size: 14px;
   }
 
-  .full-width {
-    grid-column: span 3;
-
-    @media (max-width: 992px) {
-      grid-column: span 1;
-    }
-  }
-
-  .form-action {
-    display: flex;
-    justify-content: center;
-
-    margin-top: 25px;
-
-    button {
-      min-width: 260px;
-
-      border: none;
-
-      border-radius: 10px;
-
-      padding: 14px 24px;
-
-      background: linear-gradient(
-        135deg,
-        $accent,
-        $secondary
-      );
-
-      color: $white;
-
-      font-weight: 600;
-
-      cursor: pointer;
-    }
+  .continue-btn,
+  .custom-request-card button {
+    height: 42px;
+    font-size: 13px;
+    padding: 0 12px;
   }
 }

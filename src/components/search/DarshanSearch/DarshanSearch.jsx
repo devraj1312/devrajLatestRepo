@@ -1,8 +1,6 @@
 import { FaSearch, FaChevronDown } from "react-icons/fa";
 import "./DarshanSearch.scss";
 
-
-
 const DarshanSearch = ({
   darshanType,
   setDarshanType,

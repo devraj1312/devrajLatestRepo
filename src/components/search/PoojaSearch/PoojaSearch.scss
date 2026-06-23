@@ -138,3 +138,161 @@
     background: $secondary;
   }
 }
+
+.pooja-suggestions-dropdown {
+  position: absolute;
+
+  top: calc(100% + 6px);
+  left: 0;
+
+  width: 50%;
+
+  background: $white;
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
+
+  z-index: 9999;
+
+  animation: dropdownFade 0.2s ease;
+}
+
+.pooja-suggestion-item {
+  padding: 12px 16px;
+  cursor: pointer;
+
+  font-size: 14px;
+  color: $text;
+
+  transition: all 0.2s ease;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  &:hover {
+    background: $info-bg;
+    color: $primary;
+  }
+}
+
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   MOBILE VIEW
+========================= */
+@media (max-width: 796px) {
+
+  .pooja-field:nth-child(2),
+  .pooja-field:nth-child(3) {
+    display: none;
+  }
+
+  .pooja-search-wrapper {
+    position: static;
+    left: auto;
+    bottom: auto;
+    transform: none;
+
+    width: 92%;
+    max-width: 100%;
+
+    padding: 0 15px;
+    margin-top: 20px;
+  }
+
+  .pooja-field label {
+    display: none;
+  }
+
+  .pooja-search-box {
+    border-radius: 14px;
+  }
+
+  .pooja-search-box,
+  .pooja-fields,
+  .pooja-field {
+    overflow: visible;
+  }
+
+  .pooja-select-group {
+    position: relative;
+    z-index: 9999;
+  }
+
+  .pooja-fields {
+    display: grid;
+    grid-template-columns: 1fr 55px;
+    align-items: end;
+
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .pooja-field {
+    height: auto;
+    padding: 0;
+    border: none;
+  }
+
+  .pooja-input-group {
+    width: 92%;
+    height: 42px;
+    position: relative;
+  }
+
+  .pooja-suggestions-dropdown {
+    position: absolute;
+
+    top: calc(100% + 4px);
+    left: 0;
+
+    width: 100%;
+
+    border-radius: 10px;
+
+    max-height: 180px;
+    overflow-y: auto;
+
+    background: $white;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+
+    z-index: 99999;
+  }
+
+  .pooja-suggestion-item {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .pooja-btn-box {
+    width: 55px;
+    height: 42px;
+  }
+
+  .pooja-search-btn {
+    width: 55px;
+    height: 42px;
+    padding: 0;
+
+    span {
+      display: none;
+    }
+  }
+}

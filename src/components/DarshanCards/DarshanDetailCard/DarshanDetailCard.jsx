@@ -11,20 +11,10 @@ import {
 
 const DarshanDetailCard = ({
   darshan,
-  buttonText = "+ Add",
   onAdd,
   onNext,
+  isAdded,
 }) => {
-  const [isAdded, setIsAdded] = useState(false);
-
-  const handleClick = () => {
-    if (!isAdded) {
-      onAdd(darshan);
-      setIsAdded(true);
-    } else {
-      onNext();
-    }
-  };
 
   return (
     <div className="darshan-detail-card">
@@ -112,9 +102,17 @@ const DarshanDetailCard = ({
           {/* <button onClick={() => onAdd(darshan)} >
             {buttonText}
           </button> */}
-            <button onClick={handleClick}>
-              {isAdded ? "Next" : buttonText}
-            </button>
+<button
+  onClick={() => {
+    if (isAdded) {
+      onNext();
+    } else {
+      onAdd(darshan);
+    }
+  }}
+>
+  {isAdded ? "Next" : "+ Add"}
+</button>
 
         </div>
 

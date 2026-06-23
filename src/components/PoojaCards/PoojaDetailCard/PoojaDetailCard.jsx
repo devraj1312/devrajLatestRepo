@@ -9,7 +9,9 @@ import {
 
 const PoojaDetailCard = ({
   pooja,
-  buttonText = "+ Add",
+  onAdd,
+  onNext,
+  isAdded,
 }) => {
   return (
     <div className="pooja-detail-card">
@@ -44,25 +46,23 @@ const PoojaDetailCard = ({
 
                 <h4>Our Specialities</h4>
 
-  <ul>
+                <ul>
+                  {(pooja.specialities || []).map((item, index) => {
+                    const icons = [
+                      <FaUserTie />,
+                      <FaOm />,
+                      <FaShieldAlt />
+                    ];
 
-    {(pooja.specialities || []).map((item, index) => {
+                    return (
+                      <li key={index}>
+                        {icons[index] || <FaShieldAlt />}
+                        <span>{item}</span>
+                      </li>
+                    );
+                  })}
 
-      const icons = [
-        <FaUserTie />,
-        <FaOm />,
-        <FaShieldAlt />
-      ];
-
-      return (
-        <li key={index}>
-          {icons[index] || <FaShieldAlt />}
-          <span>{item}</span>
-        </li>
-      );
-    })}
-
-  </ul>
+                </ul>
 
             </div>
 
@@ -92,8 +92,16 @@ const PoojaDetailCard = ({
             <span>/ Pooja</span>
           </div>
 
-          <button>
-            {buttonText}
+          <button
+            onClick={() => {
+              if (!isAdded) {
+                onAdd(pooja);
+              } else {
+                onNext();
+              }
+            }}
+          >
+            {isAdded ? "Next" : "+ Add"}
           </button>
 
         </div>

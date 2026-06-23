@@ -1,5 +1,3 @@
-// src/data/darshanData.js
-
 export const darshanData = [
   {
     id: 1,
