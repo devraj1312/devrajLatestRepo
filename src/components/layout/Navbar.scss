@@ -6,367 +6,111 @@ body {
   overflow-x: hidden;
 }
 
-body.menu-open {
-  overflow: hidden;
-}
-
 .navbar {
   width: 100%;
-  overflow: visible;
-  background: rgba(255, 255, 255, 1);
-  backdrop-filter: blur(0px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  padding: 14px 0;
   position: fixed;
   top: 0;
-  z-index: 99999;
+  z-index: 999;
+  background: $white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 14px 0;
 }
 
 .navbar-content {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
+  padding: 0 18px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 99999;
 
-  h2 {
-    color: $primary;
-    font-weight: 600;
-    z-index: 1001;
-    margin: 0px;
-    padding-left: 18px;
+  .nav-title {
+    margin: 0;
     cursor: pointer;
-  }
-
-  .nav-links {
-    display: flex;
-    align-items: center;
-  }
-
-  .mobile-auth-btn {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: none;
-    font-size: 28px;
     color: $primary;
-    cursor: pointer;
-    position: relative;
-    z-index: 100001;
-    margin-right: 25px;
+    font-weight: 700;
   }
 
   .nav-menu {
     display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+    gap: 40px;
 
-  a {
-    color: $light-gray;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: 600;
-    padding: 6px 18px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    position: relative;
-    display: inline-block;
-  }
-
-  a.active {
-    color: $primary;
-  }
-
-  a::after {
-    content: "";
-    position: absolute;
-    left: 18px;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background: $primary;
-    transition: 0.3s ease;
-  }
-
-  a:hover::after,
-  a.active::after {
-    width: calc(100% - 36px);
-  }
-
-  a:hover {
-    color: $primary;
-  }
-
-  .login-btn {
-    background: $accent;
-    border: 1px solid $accent;
-    font-weight: 600;
-    font-size: 16px;
-    color: $white;
-    padding: 6px 18px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-left: 35px;
-    transition: 0.3s;
-
-    &:hover {
-      background: $white;
-      color: $accent;
-    }
-  }
-}
-
-/* Profile */
-.profile-wrapper {
-  position: relative;
-  margin-left: 20px;
-
-  .profile-icon {
-    width: 35px;
-    height: 35px;
-    border: 1px solid $accent;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: $white;
-    color: $primary;
-    cursor: pointer;
-    font-size: 18px;
-    transition: 0.3s;
-
-    &:hover {
-      background: $info-bg;
-    }
-  }
-
-  .profile-dropdown {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    width: 220px;
-    background: $white;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    border-radius: 8px;
-    overflow: hidden;
-    z-index: 999;
-
-    a::after {
-      display: none !important;
-    }
-
-    .user-info {
-      padding: 14px 16px;
-      font-weight: 600;
-      color: $secondary;
-      background: $bg;
-      border-bottom: 1px solid $info-bg;
-    }
-
-    a,
-    button {
-      width: 100%;
-      padding: 14px 16px;
-      text-align: left;
-      border: none;
-      background: $white;
+    a {
       text-decoration: none;
-      color: $text;
-      font-size: 15px;
-      cursor: pointer;
-      display: block;
-      margin: 0;
-      border-bottom: 1px solid $bg;
-      transition: 0.3s;
+      color: $light-gray;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 6px 14px;
+      transition: .3s;
 
-      &:hover {
-        background: $info-bg;
+      &:hover,
+      &.active {
         color: $primary;
       }
     }
-
-    button {
-      color: $danger;
-
-      &:hover {
-        color: $danger;
-        background: $danger-bg;
-      }
-    }
   }
 }
 
-/* Mobile Responsive */
-@media (max-width: 768px) {
+/* Bottom Navigation */
+
+.mobile-bottom-nav {
+  display: none;
+}
+
+@media (max-width:768px) {
+
+  .navbar {
+    padding: 16px 0;
+  }
 
   .navbar-content {
 
-    .menu-toggle {
-      display: block;
-      font-size: 32px;
-      cursor: pointer;
-    }
+    justify-content: center;
 
     .nav-menu {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 220px;
-      max-width: 85vw;
-      height: 100vh;
-      background: $white;
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 80px 20px 20px;
-      gap: 10px;
-      box-shadow: -4px 0 20px rgba(0, 0, 0, 0.12);
-      transition: right 0.3s ease;
-      z-index: 100000;
-      overflow-y: auto;
-      overflow-x: hidden;
-      visibility: hidden;
-      opacity: 0;
-    }
-
-    .mobile-auth-btn {
-      display: flex;
-      align-items: center;
-      margin-right: 14px;
-
-      button {
-        border: none;
-        outline: none;
-        padding: 7px 14px;
-        border-radius: 6px;
-        font-size: 14px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: 0.3s ease;
-      }
-
-      .mobile-top-login-btn {
-        background: $accent;
-        color: $white;
-        border: 1px solid $accent;
-      }
-
-      .mobile-top-logout-btn {
-        background: $white;
-        color: $danger;
-        border: 1px solid $danger;
-      }
-    }
-
-    .nav-menu.open {
-      right: 0;
-      visibility: visible;
-      opacity: 1;
-    }
-
-    .nav-menu a {
-      width: 100%;
-      margin: 0;
-      padding: 10px 0;
-      display: block;
-      position: relative;
-    }
-
-    .nav-menu a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background: $primary;
-      transition: 0.3s;
-    }
-
-    .nav-menu.open::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: calc(100vw - 260px);
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.35);
-      z-index: -1;
-    }
-
-    .nav-menu a:hover {
-      padding-left: 5px;
-    }
-
-    .nav-menu a.active {
-      border-left: 3px solid $primary;
-      padding-left: 10px;
-    }
-
-    .login-btn {
-      width: 100%;
-      margin: 10px 0 0;
-      text-align: center;
-    }
-
-    .desktop-profile {
       display: none;
     }
+  }
 
-    .mobile-user-section {
-      width: 100%;
-      border-bottom: 1px solid $bg;
-      padding-bottom: 12px;
-      // margin-bottom: 10px;
+  .mobile-bottom-nav {
 
-      .mobile-user-header {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-        font-weight: 600;
-        color: $primary;
-        padding: 6px 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: $secondary;
+    border-top: 1px solid rgba(0,0,0,.08);
+    box-shadow: 0 -5px 20px rgba(0,0,0,.08);
+    z-index: 999;
 
-        span {
-          font-size: 15px;
-        }
+    a {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: $white;
+      font-size: 12px;
+      gap: 4px;
+      transition: .3s;
+
+      svg {
+        font-size: 20px;
       }
 
-      .mobile-submenu {
-        margin-top: 8px;
-        padding-left: 8px;
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-
-        a,
-        button {
-          width: 100%;
-          display: block;
-          padding: 8px 12px;
-          text-decoration: none;
-          border: none;
-          background: transparent;
-          text-align: left;
-          cursor: pointer;
-          border-radius: 6px;
-          transition: 0.25s ease;
-          font-size: 14px;
-
-          color: rgba(0, 0, 0, 0.65);
-        }
-
-        a:hover {
-          background: $info-bg;
-          color: $primary;
-          padding-left: 14px;
-        }
+      &.active {
+        color: $warning;
       }
     }
+  }
+
+  body {
+    padding-bottom: 60px;
   }
 }

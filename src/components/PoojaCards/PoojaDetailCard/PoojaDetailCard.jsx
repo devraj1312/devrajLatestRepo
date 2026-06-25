@@ -24,15 +24,13 @@ const PoojaDetailCard = ({
       </div>
 
       <div className="card-content">
-
         <div className="pooja-info">
-
           <h3>{pooja.name}</h3>
 
-          <div className="duration">
+          {/* <div className="duration">
             <FaClock />
             <span>{pooja.duration}</span>
-          </div>
+          </div> */}
 
           {pooja.description && (
             <p className="description">
@@ -41,73 +39,74 @@ const PoojaDetailCard = ({
           )}
 
             <div className="pooja-meta">
+              <div className="info-section">
 
-            <div className="info-section">
+                  <h4>Our Specialities</h4>
 
-                <h4>Our Specialities</h4>
+                  <ul>
+                    {(pooja.specialities || []).map((item, index) => {
+                      const icons = [
+                        <FaUserTie />,
+                        <FaOm />,
+                        <FaShieldAlt />
+                      ];
 
-                <ul>
-                  {(pooja.specialities || []).map((item, index) => {
-                    const icons = [
-                      <FaUserTie />,
-                      <FaOm />,
-                      <FaShieldAlt />
-                    ];
+                      return (
+                        <li key={index}>
+                          {icons[index] || <FaShieldAlt />}
+                          <span>{item}</span>
+                        </li>
+                      );
+                    })}
 
-                    return (
+                  </ul>
+
+              </div>
+
+              <div className="info-section">
+
+                  <h4>Includes</h4>
+
+                  <ul>
+                  {(pooja.includes || []).map((item, index) => (
                       <li key={index}>
-                        {icons[index] || <FaShieldAlt />}
-                        <span>{item}</span>
+                      <FaCheckCircle />
+                      {item}
                       </li>
-                    );
-                  })}
+                  ))}
+                  </ul>
 
-                </ul>
-
+              </div>
             </div>
-
-            <div className="info-section">
-
-                <h4>Includes</h4>
-
-                <ul>
-                {(pooja.includes || []).map((item, index) => (
-                    <li key={index}>
-                    <FaCheckCircle />
-                    {item}
-                    </li>
-                ))}
-                </ul>
-
-            </div>
-
-            </div>
-
         </div>
 
         <div className="pooja-price">
-
-          <div className="price">
-            ₹{pooja.price}
-            <span>/ Pooja</span>
+          <div className="duration">
+            <FaClock />
+            <span>{pooja.duration}</span>
           </div>
 
-          <button
-            onClick={() => {
-              if (!isAdded) {
-                onAdd(pooja);
-              } else {
-                onNext();
-              }
-            }}
-          >
-            {isAdded ? "Next" : "+ Add"}
-          </button>
+          <div className="price-section">
+            <div className="price">
+              ₹{pooja.price}
+              <span>/ Pooja</span>
+            </div>
 
+            <button
+              onClick={() => {
+                if (!isAdded) {
+                  onAdd(pooja);
+                } else {
+                  onNext();
+                }
+              }}
+            >
+              {isAdded ? "Next" : "+ Add"}
+            </button>
+          </div>
         </div>
-
+        
       </div>
-
     </div>
   );
 };
