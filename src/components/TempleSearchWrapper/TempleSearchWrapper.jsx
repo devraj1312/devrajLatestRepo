@@ -32,13 +32,6 @@ const TempleSearchWrapper = ({
         <div className="temple-tabs">
 
           <button
-            className={activeTab === "hotels" ? "active" : ""}
-            onClick={() => setActiveTab("hotels")}
-          >
-            <FaHotel /> Hotel
-          </button>
-
-          <button
             className={activeTab === "cabs" ? "active" : ""}
             onClick={() => setActiveTab("cabs")}
           >
@@ -60,54 +53,18 @@ const TempleSearchWrapper = ({
             Darshan
           </button>
 
+          {/* <button
+            className={activeTab === "hotels" ? "active" : ""}
+            onClick={() => setActiveTab("hotels")}
+          >
+            <FaHotel /> Hotel
+          </button> */}
+
         </div>
       
         {/* INPUTS */}
 
         <div className="temple-fields">
-
-          {/* HOTELS */}
-
-          {activeTab === "hotels" && (
-            <>
-              <div className="temple-field">
-
-                <label>Location</label>
-
-                <AutocompleteInput
-                  placeholder="Enter city or hotel"
-                  value={hotelLocation}
-                  setValue={setHotelLocation}
-                />
-
-              </div>
-
-              <div className="temple-field">
-
-                <label>Check-in</label>
-
-                <div className="temple-input-group">
-                  <input type="date" />
-                </div>
-
-              </div>
-
-              <div className="temple-field">
-
-                <label>Check-out</label>
-
-                <div className="temple-input-group">
-                  <input type="date" />
-                </div>
-
-              </div>
-
-              <button className="temple-search-btn">
-                <FaSearch />
-                Search
-              </button>
-            </>
-          )}
 
           {/* CABS */}
 
@@ -278,6 +235,49 @@ const TempleSearchWrapper = ({
                   <FaSearch /> Search
                 </button>
               </div>
+            </>
+          )}
+
+          {/* HOTELS */}
+
+          {activeTab === "hotels" && (
+            <>
+              <div className="temple-field">
+
+                <label>Location</label>
+
+                <AutocompleteInput
+                  placeholder="Enter city or hotel"
+                  value={hotelLocation}
+                  setValue={setHotelLocation}
+                />
+
+              </div>
+
+              <div className="temple-field">
+
+                <label>Check-in</label>
+
+                <div className="temple-input-group">
+                  <input type="date" />
+                </div>
+
+              </div>
+
+              <div className="temple-field">
+
+                <label>Check-out</label>
+
+                <div className="temple-input-group">
+                  <input type="date" />
+                </div>
+
+              </div>
+
+              <button className="temple-search-btn">
+                <FaSearch />
+                Search
+              </button>
             </>
           )}
 

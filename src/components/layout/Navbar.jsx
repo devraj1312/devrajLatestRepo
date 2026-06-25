@@ -150,9 +150,9 @@ const Navbar = () => {
               Home
             </NavLink>
 
-            <NavLink to="/hotels" onClick={() => setMobileMenu(false)}>
+            {/* <NavLink to="/hotels" onClick={() => setMobileMenu(false)}>
               Hotels
-            </NavLink>
+            </NavLink> */}
 
             <NavLink to="/cabs" onClick={() => setMobileMenu(false)}>
               Cabs

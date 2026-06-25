@@ -1,7 +1,11 @@
 import { FaClock } from "react-icons/fa";
 import "./DarshanCard.scss";
+import { useNavigate } from "react-router-dom";
 
 const DarshanCard = ({ item }) => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="darshan-package-card">
 
@@ -36,16 +40,19 @@ const DarshanCard = ({ item }) => {
           <div className="darshan-action-buttons">
 
             {item.isCustom ? (
-              <button className="darshan-create-btn">
+              <button className="darshan-create-btn"
+              onClick={() => navigate("/custom-darshan-planner")}>
                 Create Plan
               </button>
             ) : (
               <>
-                <button className="darshan-details-btn">
-                  View Details
+                <button className="darshan-details-btn"
+                onClick={() => navigate("/darshan")}>
+                  Details
                 </button>
 
-                <button className="darshan-book-btn">
+                <button className="darshan-book-btn"
+                onClick={() => navigate("/darshan")}>
                   Book Now
                 </button>
               </>
