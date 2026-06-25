@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { FaCar, FaMapMarkerAlt, FaCalendarAlt, FaClock } from "react-icons/fa";
 import CabCard from "../../components/CabCard/CabCard";
 import "./Cabs.scss";
 import { bookCab, getCabs } from "../../services/cabService";
-import { showSuccess, showError, showWarning } from "../../utils/toast";
+// import { showSuccess, showError, showWarning } from "../../utils/toast";
 import AutocompleteInput from "../../components/AutocompleteInput";
 import CabSearch from "../../components/search/CabSearch/CabSearch";
 
@@ -22,7 +22,8 @@ const Cabs = () => {
   const [cabTypes, setCabTypes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isLoaded, setIsLoaded] = useState(false);
-  const isLoggedIn = localStorage.getItem("token");
+  // const isLoggedIn = localStorage.getItem("token");
+  const formRef = useRef(null);
 
   const [pickupLocation, setPickupLocation] = useState("");
   const [dropLocation, setDropLocation] = useState("");
@@ -54,11 +55,11 @@ const Cabs = () => {
   }, [location.state]);
 
   // ✅ SAVE form (after load only)
-  useEffect(() => {
-    if (!isLoaded) return;
-    const formData = { pickup, drop, date, time };
-    localStorage.setItem("cabForm", JSON.stringify(formData));
-  }, [pickup, drop, date, time, isLoaded]);
+  // useEffect(() => {
+  //   if (!isLoaded) return;
+  //   const formData = { pickup, drop, date, time };
+  //   localStorage.setItem("cabForm", JSON.stringify(formData));
+  // }, [pickup, drop, date, time, isLoaded]);
 
   // ✅ Select cab from URL
   useEffect(() => {
@@ -70,51 +71,51 @@ const Cabs = () => {
     }
   }, [id, cabTypes]);
 
-  const handleBookCab = async () => {
-    const dateTime = `${date}T${time}:00`;
-    const token = localStorage.getItem("token");
+  // const handleBookCab = async () => {
+  //   const dateTime = `${date}T${time}:00`;
+  //   const token = localStorage.getItem("token");
 
-    if (!token) {
-      showWarning("Please login to continue ⚠️");
-      navigate("/login", {
-        state: { from: `/cabs` },
-      });
-      return;
-    }
+  //   if (!token) {
+  //     showWarning("Please login to continue ⚠️");
+  //     navigate("/login", {
+  //       state: { from: `/cabs` },
+  //     });
+  //     return;
+  //   }
 
-    if (!pickup || !drop || !date || !time || !selectedCab) return;
+  //   if (!pickup || !drop || !date || !time || !selectedCab) return;
 
-    try {
-      const data = await bookCab({
-        cab_name: selectedCab.name,
-        pickup,
-        drop,
-        date_time: dateTime,
-      });
+  //   try {
+  //     const data = await bookCab({
+  //       cab_name: selectedCab.name,
+  //       pickup,
+  //       drop,
+  //       date_time: dateTime,
+  //     });
 
-      if (data?.status === "success") {
-        showSuccess(`Booking-ID: ${data.booking_id}`);
-        // alert("Booking Confirmed! ID: " + data.booking_id);
+  //     if (data?.status === "success") {
+  //       showSuccess(`Booking-ID: ${data.booking_id}`);
+  //       // alert("Booking Confirmed! ID: " + data.booking_id);
 
-        localStorage.removeItem("cabForm");
-        setPickup("");
-        setDrop("");
-        setDate("");
-        setTime("");
-        setSelectedCab(null);
-      } else {
-        // alert(data?.message || "Booking failed");
-        showError(data?.message || "Booking failed");
-      }
+  //       localStorage.removeItem("cabForm");
+  //       setPickup("");
+  //       setDrop("");
+  //       setDate("");
+  //       setTime("");
+  //       setSelectedCab(null);
+  //     } else {
+  //       // alert(data?.message || "Booking failed");
+  //       showError(data?.message || "Booking failed");
+  //     }
 
-    } catch (err) {
-      console.error(err);
-      // alert("Server error");
+  //   } catch (err) {
+  //     console.error(err);
+  //     // alert("Server error");
 
-      const data = err?.response?.data;
-      showError(data?.message || "Server error");
-    }
-  };
+  //     const data = err?.response?.data;
+  //     showError(data?.message || "Server error");
+  //   }
+  // };
 
   useEffect(() => {
     const fetchCabs = async () => {
@@ -173,6 +174,26 @@ const Cabs = () => {
     fetchCabs();
   }, []);
 
+  const handleInquiry = () => {
+    navigate("/inquiry-form", {
+      state: {
+        category: "Cab",
+        pickup,
+        drop,
+        date,
+        time,
+        selectedCab,
+      },
+    });
+  };
+
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   if (loading) {
     return <h2 style={{ textAlign: "center" }}>Loading cabs...</h2>;
   }
@@ -205,15 +226,16 @@ const Cabs = () => {
               </p>
 
             </div>
-
-            <CabSearch
-              pickupLocation={pickupLocation}
-              setPickupLocation={setPickupLocation}
-              travelDate={travelDate}
-              setTravelDate={setTravelDate}
-              dropLocation={dropLocation}
-              setDropLocation={setDropLocation}
-            />
+            {/* <div className="cab-search-wrapper"> */}
+              <CabSearch
+                pickupLocation={pickupLocation}
+                setPickupLocation={setPickupLocation}
+                travelDate={travelDate}
+                setTravelDate={setTravelDate}
+                dropLocation={dropLocation}
+                setDropLocation={setDropLocation}
+              />
+            {/* </div> */}
 
           </div>
         </div>
@@ -224,11 +246,59 @@ const Cabs = () => {
         <div className="cabs-page">
           <div className="cabs-layout">
 
-            {/* Sidebar */}
-            <aside className="cab-sidebar">
+            {/* Cab Grid */}
+            <div className="cab-grid">
+              <h2>
+                Choose Your <span>Perfect Ride</span>
+              </h2>
 
+              {loading ? (
+                <p>Loading cabs...</p>
+              ) : (          
+                  cabTypes.map((cab) => (
+                    // <div
+                    //   key={cab.id}
+                    //   className={`cab-item ${
+                    //     selectedCab?.id === cab.id
+                    //       ? "selected"
+                    //       : ""
+                    //   }`}
+                    //   onClick={() => {
+                    //     setSelectedCab(cab);
+                    //     navigate(`/cabs/${cab.id}`);
+                    //   }}
+                    // >
+                    <div
+                      className={`cab-item ${
+                        selectedCab?.id === cab.id ? "selected" : ""
+                      }`}
+                      onClick={() => setSelectedCab(cab)}
+                    >
+                      {/* <CabCard cab={cab} /> */}
+                      {/* <CabCard
+                        cab={cab}
+                        isSelected={selectedCab?.id === cab.id}
+                        onSelect={() => {
+                          setSelectedCab(cab);
+                          navigate(`/cabs/${cab.id}`);
+                        }}
+                      /> */}
+                      <CabCard
+                        cab={cab}
+                        isSelected={selectedCab?.id === cab.id}
+                        onAdd={() => setSelectedCab(cab)}
+                        onNext={scrollToForm}
+                      />
+                    </div>
+                  ))
+              )}
+            </div>
+
+          {/* Sidebar */}
+            <aside className="cab-sidebar">
               {/* Ride Details Form */}
-              <div className="cab-form">
+              <div className="cab-form"
+              ref={formRef}>
                 <h2>
                   <FaCar /> Ride Details
                 </h2>
@@ -251,7 +321,7 @@ const Cabs = () => {
                     />
                 </div>
 
-                <div className="form-group">
+                {/* <div className="form-group">
                   <label>Date</label>
                   <div className="input-box">
                     <FaCalendarAlt className="icon" />
@@ -274,7 +344,7 @@ const Cabs = () => {
                       onChange={(e) => setTime(e.target.value)}
                     />
                   </div>
-                </div>
+                </div> */}
 
                 {selectedCab && (
                   <div className="selected-cab">
@@ -283,12 +353,19 @@ const Cabs = () => {
                   </div>
                 )}
 
-                <button
+                {/* <button
                   className="book-btn"
                   onClick={handleBookCab}
                   disabled={!pickup || !drop || !date || !time || !selectedCab}
                 >
                     {isLoggedIn ? "Submit" : "Login to Book"}
+                </button> */}
+                <button
+                  className="book-btn"
+                  onClick={handleInquiry}
+                  disabled={!pickup || !drop || !selectedCab}
+                >
+                  Continue
                 </button>
 
                 <p className="note">
@@ -297,37 +374,6 @@ const Cabs = () => {
               </div>
 
             </aside>
-
-            {/* Cab Grid */}
-            <div className="cab-grid">
-
-              <h2>
-                Choose Your <span>Perfect Ride</span>
-              </h2>
-
-              {loading ? (
-                <p>Loading cabs...</p>
-              ) : (
-               
-                  cabTypes.map((cab) => (
-                    <div
-                      key={cab.id}
-                      className={`cab-item ${
-                        selectedCab?.id === cab.id
-                          ? "selected"
-                          : ""
-                      }`}
-                      onClick={() => {
-                        setSelectedCab(cab);
-                        navigate(`/cabs/${cab.id}`);
-                      }}
-                    >
-                      <CabCard cab={cab} />
-                    </div>
-                  ))
-              
-              )}
-            </div>
           </div>
         </div>
       </div>

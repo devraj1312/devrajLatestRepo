@@ -36,7 +36,7 @@ const Testimonials = () => {
             What Our <span>Travelers Say</span>
           </h2>
 
-          <a href="/reviews" className="view-all-link">
+          <a href="/about" className="view-all-link">
             View All Reviews
             <FiArrowRight />
           </a>

@@ -2,64 +2,119 @@ import {
   FaUsers,
   FaSnowflake,
   FaMusic,
-  FaUserTie
+  FaCheckCircle,
+  FaCar
 } from "react-icons/fa";
-
-import { FaIndianRupeeSign } from "react-icons/fa6";
 
 import "./CabCard.scss";
 
-const CabCard = ({ cab }) => {
+const CabCard = ({
+  cab,
+  isSelected,
+  onNext,
+  onAdd,
+}) => {
   return (
     <div className="cab-card">
 
-      {/* Car Image */}
-      <div className="card-image">
-        <img src={cab.image} alt={cab.name} />
+      <div className="cab-card-image">
+        <img
+          src={cab.image}
+          alt={cab.name}
+        />
       </div>
 
-      {/* Car Details */}
       <div className="card-content">
-        <div className="content-top">
-          <h3 className="cab-name">{cab.name}</h3>
-          <p className="cab-description">{cab.description}</p>
-        </div>
 
-        <div className="content-bottom">
-          <div className="cab-capacity">
-            <FaUsers />
-            <span>{cab.capacity} Seater</span>
+        <div className="cab-info">
+
+          <h3>{cab.name}</h3>
+
+          <p className="description">
+            {cab.description}
+          </p>
+
+          <div className="cab-meta">
+
+            <div className="info-section">
+
+              <h4>Cab Details</h4>
+
+              <ul>
+                <li>
+                  <FaUsers />
+                  {cab.capacity} Seater
+                </li>
+
+                <li>
+                  <FaSnowflake />
+                  Air Conditioned
+                </li>
+
+                <li>
+                  <FaMusic />
+                  Music System
+                </li>
+              </ul>
+
+            </div>
+
+            <div className="info-section">
+
+              <h4>Includes</h4>
+
+              <ul>
+                <li>
+                  <FaCheckCircle />
+                  Driver Allowance
+                </li>
+
+                <li>
+                  <FaCheckCircle />
+                  Comfortable Seats
+                </li>
+
+                <li>
+                  <FaCheckCircle />
+                  Local Assistance
+                </li>
+              </ul>
+
+            </div>
+
           </div>
 
-          <div className="cab-features">
-            <span>
-              <FaSnowflake />
-              AC
-            </span>
+        </div>
 
-            <span>
-              <FaMusic />
-              Music
-            </span>
+        <div className="cab-price">
 
-            <span>
-              <FaUserTie />
-              Driver Allowance
-            </span>
+          <div className="cab-type">
+            <FaCar />
+            <span>{cab.type}</span>
           </div>
-        </div>
-      </div>
 
-      {/* Price & Button */}
-      <div className="card-action">
-        <div className="price">
-          <FaIndianRupeeSign />
-          {cab.price} / km
+          <div className="price">
+            ₹{cab.price}
+            <span>/ km</span>
+          </div>
+
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+
+              if (isSelected) {
+                onNext();
+              } else {
+                onAdd();
+              }
+            }}
+          >
+            {isSelected ? "Next" : "+ Add"}
+          </button>
+
         </div>
 
-        <button className="view-btn">
-          View Details
-        </button>
       </div>
 
     </div>

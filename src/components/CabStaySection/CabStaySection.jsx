@@ -1,10 +1,14 @@
 import "./CabStaySection.scss";
+import { useNavigate } from "react-router-dom";
 
 import cabImg from "../../assets/images/cab3.png";
 import roomImg from "../../assets/images/hotel3.png";
 import { LuCarFront, LuBuilding } from "react-icons/lu";
 
 const CabStaySection = () => {
+
+  const navigate = useNavigate();
+
   return (
     <section className="cabstay-section">
 
@@ -45,8 +49,9 @@ const CabStaySection = () => {
 
             </ul>
 
-            <button className="cabstay-btn">
-              Book Cab Now →
+            <button className="cabstay-btn"
+            onClick={() => navigate("/cabs")}>
+              BOOK CAB NOW →
             </button>
 
           </div>
@@ -93,7 +98,7 @@ const CabStaySection = () => {
             </ul>
 
             <button className="cabstay-btn">
-              Book Stay Now →
+              COMING SOON →
             </button>
 
           </div>

@@ -4,11 +4,11 @@ import "./DarshanSearch.scss";
 const DarshanSearch = ({
   darshanType,
   setDarshanType,
-  darshanDate,
-  setDarshanDate,
-  devotees,
-  setDevotees,
+  suggestions,
+  setSuggestions,
+  handleSearchChange,
   handleDarshanSearch,
+  handleSuggestionClick,
 }) => {
   return (
     <div className="darshan-search-wrapper">
@@ -17,35 +17,31 @@ const DarshanSearch = ({
 
           {/* Darshan Type */}
           <div className="darshan-field">
-            <label>Select Darshan</label>
+            <label className="darshan-label">
+              Search Darshan
+            </label>
 
-            <div className="darshan-input-group darshan-select-group">
-              <select
+            <div className="darshan-input-group">
+              <input
+                type="text"
                 value={darshanType}
-                onChange={(e) => setDarshanType(e.target.value)}
-              >
-                <option value="">
-                  Select Darshan
-                </option>
+                onChange={handleSearchChange}
+                placeholder="Search Darshan..."
+              />
 
-                <option value="Bhasma Aarti Darshan">
-                  Bhasma Aarti Darshan
-                </option>
-
-                <option value="VIP Darshan">
-                  VIP Darshan
-                </option>
-
-                <option value="Sheeghra Darshan">
-                  Sheeghra Darshan
-                </option>
-
-                <option value="General Darshan">
-                  General Darshan
-                </option>
-              </select>
-
-              <FaChevronDown className="select-arrow" />
+              {suggestions.length > 0 && (
+                <div className="suggestions-dropdown">
+                  {suggestions.slice(0, 3).map((item) => (
+                    <div
+                      key={item.id}
+                      className="suggestion-item"
+                      onClick={() => handleSuggestionClick(item)}
+                    >
+                      {item.name}
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -57,8 +53,6 @@ const DarshanSearch = ({
               <input
                 type="date"
                 min={new Date().toISOString().split("T")[0]}
-                value={darshanDate}
-                onChange={(e) => setDarshanDate(e.target.value)}
               />
             </div>
           </div>
@@ -68,10 +62,7 @@ const DarshanSearch = ({
             <label>Devotees</label>
 
             <div className="darshan-input-group darshan-select-group">
-              <select
-                value={devotees}
-                onChange={(e) => setDevotees(e.target.value)}
-              >
+              <select>
                 <option value="">
                   Select Person
                 </option>
@@ -101,10 +92,10 @@ const DarshanSearch = ({
           <div className="darshan-btn-box">
             <button
               className="darshan-search-btn"
-              onClick={handleDarshanSearch}
+              onClick={() => handleDarshanSearch()}
             >
               <FaSearch />
-              Search
+              <span>Search</span>
             </button>
           </div>
 

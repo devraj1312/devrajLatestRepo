@@ -1,7 +1,11 @@
 import { FaClock } from "react-icons/fa";
 import "./DarshanCard.scss";
+import { useNavigate } from "react-router-dom";
 
 const DarshanCard = ({ item }) => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="darshan-package-card">
 
@@ -14,7 +18,7 @@ const DarshanCard = ({ item }) => {
 
       <div className="darshan-package-content">
 
-        <h3>{item.title}</h3>
+        <h3>{item.name}</h3>
 
         <span className="darshan-duration">
           <FaClock />
@@ -22,11 +26,11 @@ const DarshanCard = ({ item }) => {
           {item.duration}
         </span>
 
-        <p>{item.temple}</p>
+        {/* <p>{item.description}</p> */}
 
         <div className="darshan-package-footer">
 
-          <div className="darshan-price">
+          <div className="card-darshan-price">
             ₹{item.price}
             {item.price !== "Custom" && (
               <span>/ Person</span>
@@ -36,16 +40,19 @@ const DarshanCard = ({ item }) => {
           <div className="darshan-action-buttons">
 
             {item.isCustom ? (
-              <button className="darshan-create-btn">
+              <button className="darshan-create-btn"
+              onClick={() => navigate("/custom-darshan-planner")}>
                 Create Plan
               </button>
             ) : (
               <>
-                <button className="darshan-details-btn">
-                  View Details
+                <button className="darshan-details-btn"
+                onClick={() => navigate("/darshan")}>
+                  Details
                 </button>
 
-                <button className="darshan-book-btn">
+                <button className="darshan-book-btn"
+                onClick={() => navigate("/darshan")}>
                   Book Now
                 </button>
               </>

@@ -4,11 +4,15 @@ import "./PoojaSearch.scss";
 const PoojaSearch = ({
   poojaType,
   setPoojaType,
+  suggestions,
+  setSuggestions,
+  handleSearchChange,
+  handlePoojaSearch,
+  handleSuggestionClick,
   poojaDate,
   setPoojaDate,
   devotees,
   setDevotees,
-  handlePoojaSearch,
 }) => {
   return (
     <div className="pooja-search-wrapper">
@@ -17,35 +21,35 @@ const PoojaSearch = ({
 
           {/* Pooja Type */}
           <div className="pooja-field">
-            <label>Select Pooja</label>
+            <label className="pooja-label">
+              Search Pooja
+            </label>
 
-            <div className="pooja-input-group pooja-select-group">
-              <select
+            <div className="pooja-input-group">
+              <input
+                type="text"
                 value={poojaType}
-                onChange={(e) => setPoojaType(e.target.value)}
-              >
-                <option value="">
-                  Select Pooja
-                </option>
+                onChange={handleSearchChange}
+                placeholder="Search Pooja..."
+              />
 
-                <option value="Mahakal Bhasma Aarti">
-                  Mahakal Bhasma Aarti
-                </option>
-
-                <option value="Rudrabhishek">
-                  Rudrabhishek
-                </option>
-
-                <option value="Mahamrityunjaya Jaap">
-                  Mahamrityunjaya Jaap
-                </option>
-
-                <option value="Laghu Rudra Pooja">
-                  Laghu Rudra Pooja
-                </option>
-              </select>
-
-              <FaChevronDown className="select-arrow" />
+              {suggestions.length > 0 && (
+                <div className="pooja-suggestions-dropdown">
+                  {suggestions
+                    .slice(0, 3)
+                    .map((item) => (
+                      <div
+                        key={item.id}
+                        className="pooja-suggestion-item"
+                        onClick={() =>
+                          handleSuggestionClick(item)
+                        }
+                      >
+                        {item.name}
+                      </div>
+                    ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -104,7 +108,7 @@ const PoojaSearch = ({
               onClick={handlePoojaSearch}
             >
               <FaSearch />
-              Search
+              <span>Search</span>
             </button>
           </div>
 

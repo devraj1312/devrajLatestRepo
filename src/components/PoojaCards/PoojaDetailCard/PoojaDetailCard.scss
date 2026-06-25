@@ -100,8 +100,8 @@
     gap: 25px;
 
     @media (max-width: 768px) {
-      flex-direction: column;
-      gap: 12px;
+      flex-direction: row;
+      gap: 10px;
     }
   }
 
@@ -145,6 +145,25 @@
   }
 }
 
+@media (max-width: 768px) {
+
+  .info-section {
+
+    h4 {
+      font-size: 12px;
+    }
+
+    li {
+      font-size: 11px;
+
+      svg {
+        font-size: 9px;
+      }
+    }
+  }
+
+}
+
 .pooja-price {
   width: 170px;
 
@@ -160,8 +179,12 @@
   @media (max-width: 768px) {
     width: 100%;
 
-    align-items: flex-start;
-    text-align: left;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+    text-align: right;
   }
 
   .price {
@@ -209,4 +232,25 @@
       transform: translateY(-2px);
     }
   }
+}
+
+@media (max-width: 768px) {
+
+  .pooja-price {
+
+    .price {
+      font-size: 18px;
+
+      span {
+        font-size: 11px;
+      }
+    }
+
+    button {
+      min-width: 95px;
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+  }
+
 }

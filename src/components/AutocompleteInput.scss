@@ -7,56 +7,42 @@
 
 .temple-autocomplete {
   position: relative;
-  z-index: 100;
-
+  // overflow: visible;
+  // z-index: 10;
+  // isolation: isolate; 
   width: 85%;
   height: 38px;
-
   border: 1px solid
     color.adjust($secondary, $lightness: 55%);
-
   border-radius: 8px;
-
   background: #fff;
-
   display: flex;
   align-items: center;
-
   padding: 0 12px;
-
   transition: 0.3s ease;
 
   &:focus-within {
     border-color: $primary;
-
     box-shadow: 0 0 0 3px
       rgba($primary, 0.12);
   }
 
   .location-icon {
     color: rgba($secondary, 0.55);
-
     font-size: 13px;
-
     margin-right: 8px;
-
     flex-shrink: 0;
   }
 
   input {
     width: 100%;
     height: 100%;
-
     border: none;
     outline: none;
-
     background: transparent;
-
     font-size: 13px;
     color: $secondary;
-
     padding: 0;
-
     &::placeholder {
       color: rgba($secondary, 0.5);
     }
@@ -69,24 +55,16 @@
 
 .temple-suggestions {
   position: absolute;
-
   top: calc(100% + 6px);
   left: 0;
-
   width: 100%;
-
   background: #fff;
-
   border-radius: 10px;
-
   overflow: hidden;
-
   box-shadow: 0 8px 20px
     rgba($secondary, 0.12);
-
   border: 1px solid
     color.adjust($secondary, $lightness: 68%);
-
   z-index: 99999;
 }
 
