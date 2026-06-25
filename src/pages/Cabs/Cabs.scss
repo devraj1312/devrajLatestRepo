@@ -166,6 +166,8 @@
 
   .form-group {
     margin-bottom: 15px;
+    // position: relative;
+    // z-index: 1;
 
     label {
       display: block;
@@ -201,6 +203,10 @@
     }
   }
 
+  // .form-group:focus-within {
+  //   z-index: 9999;
+  // }
+
   .custom-width {
     width: 100%;
   }
@@ -215,7 +221,7 @@
   }
 
   .book-btn {
-    width: 100%;
+    width: 93%;
     padding: 13px;
     border: none;
     border-radius: 10px;

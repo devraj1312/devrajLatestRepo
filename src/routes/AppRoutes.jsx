@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "../components/layout/Layout";
 import Home from "../pages/Home/Home";
-import Hotels from "../pages/Hotels/Hotels";
-import HotelBooking from "../pages/Hotels/HotelBooking";
+// import Hotels from "../pages/Hotels/Hotels";
+// import HotelBooking from "../pages/Hotels/HotelBooking";
 import Cabs from "../pages/Cabs/Cabs";
 import Pooja from "../pages/Pooja/Pooja";
 import Darshan from "../pages/Darshan/Darshan";
@@ -36,14 +36,14 @@ const AppRoutes = () => (
       }
     />
 
-    <Route
+    {/* <Route
       path="/hotels"
       element={
         <Layout>
           <Hotels />
         </Layout>
       }
-    />
+    /> */}
 
     <Route
       path="/cabs"
@@ -72,14 +72,14 @@ const AppRoutes = () => (
       }
     />
 
-    <Route
+    {/* <Route
       path="/hotels/:id"
       element={
         <Layout>
           <HotelBooking />
         </Layout>
       }
-    /> 
+    />  */}
 
     <Route
       path="/cabs/:id"

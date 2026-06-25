@@ -37,42 +37,6 @@ const SpiritualServices = () => {
 
         <div className="service-grid">
 
-          {/* HOTEL */}
-          <Link to="/hotels" className="service-card-link">
-            <div className="service-card">
-
-              <div className="service-image">
-
-                <img
-                  src={hotelImg}
-                  alt="Hotels"
-                />
-
-                <div className="service-icon">
-                  <FaHotel />
-                </div>
-
-              </div>
-
-              <div className="service-content">
-
-                <h3>Stay Services</h3>
-
-                <p>
-                  Comfortable stays for your
-                  spiritual journey in Ujjain.
-                </p>
-
-                <button>
-                  View Hotels
-                  <FaArrowRight />
-                </button>
-
-              </div>
-
-            </div>
-          </Link>
-
           {/* CABS */}
           <Link to="/cabs" className="service-card-link">
             <div className="service-card">
@@ -180,6 +144,42 @@ const SpiritualServices = () => {
 
             </div>
           </Link>
+
+                    {/* HOTEL */}
+          {/* <Link to="/hotels" className="service-card-link"> */}
+            <div className="service-card">
+
+              <div className="service-image">
+
+                <img
+                  src={hotelImg}
+                  alt="Hotels"
+                />
+
+                <div className="service-icon">
+                  <FaHotel />
+                </div>
+
+              </div>
+
+              <div className="service-content">
+
+                <h3>Stay Services</h3>
+
+                <p>
+                  Comfortable stays for your
+                  spiritual journey in Ujjain.
+                </p>
+
+                <button>
+                  Coming Soon
+                  <FaArrowRight />
+                </button>
+
+              </div>
+
+            </div>
+          {/* </Link> */}
         </div>
       </div>
 

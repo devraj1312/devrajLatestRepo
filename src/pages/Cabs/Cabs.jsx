@@ -55,11 +55,11 @@ const Cabs = () => {
   }, [location.state]);
 
   // ✅ SAVE form (after load only)
-  useEffect(() => {
-    if (!isLoaded) return;
-    const formData = { pickup, drop, date, time };
-    localStorage.setItem("cabForm", JSON.stringify(formData));
-  }, [pickup, drop, date, time, isLoaded]);
+  // useEffect(() => {
+  //   if (!isLoaded) return;
+  //   const formData = { pickup, drop, date, time };
+  //   localStorage.setItem("cabForm", JSON.stringify(formData));
+  // }, [pickup, drop, date, time, isLoaded]);
 
   // ✅ Select cab from URL
   useEffect(() => {
@@ -177,7 +177,7 @@ const Cabs = () => {
   const handleInquiry = () => {
     navigate("/inquiry-form", {
       state: {
-        category: "Cab Booking",
+        category: "Cab",
         pickup,
         drop,
         date,
@@ -294,7 +294,7 @@ const Cabs = () => {
               )}
             </div>
 
-                        {/* Sidebar */}
+          {/* Sidebar */}
             <aside className="cab-sidebar">
               {/* Ride Details Form */}
               <div className="cab-form"

@@ -26,7 +26,7 @@ const HeroSection = ({
   setHotelLocation,
 }) => {
 
-  const [activeTab, setActiveTab] = useState("hotels");
+  const [activeTab, setActiveTab] = useState("cabs");
 
   return (
     <>

@@ -57,12 +57,12 @@ const Footer = () => {
 
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/hotels">Hotels</Link></li>
+              {/* <li><Link to="/hotels">Hotels</Link></li> */}
               <li><Link to="/cabs">Cabs</Link></li>
               <li><Link to="/pooja">Pooja</Link></li>
               <li><Link to="/darshan">Darshan Packages</Link></li>
               <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/contact">Contact Us</Link></li>
+              {/* <li><Link to="/contact">Contact Us</Link></li> */}
             </ul>
 
           </div>
@@ -74,12 +74,12 @@ const Footer = () => {
             <h4>Our Services</h4>
 
             <ul>
-              <li><Link to="/hotels">Hotel Bookings</Link></li>
+              {/* <li><Link to="/hotels">Hotel Bookings</Link></li> */}
               <li><Link to="/cabs">Cab Services</Link></li>
               <li><Link to="/pooja">Pooja Bookings</Link></li>
               <li><Link to="/darshan">Darshan Packages</Link></li>
               <li><Link to="/custom-pooja">Custom Pooja</Link></li>
-              <li><Link to="/group-booking">Group Bookings</Link></li>
+              {/* <li><Link to="/group-booking">Group Bookings</Link></li> */}
             </ul>
 
           </div>
