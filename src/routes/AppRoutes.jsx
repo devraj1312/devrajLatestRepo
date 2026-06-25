@@ -6,26 +6,26 @@ import Home from "../pages/Home/Home";
 import Cabs from "../pages/Cabs/Cabs";
 import Pooja from "../pages/Pooja/Pooja";
 import Darshan from "../pages/Darshan/Darshan";
-import Bookings from "../pages/Bookings/Bookings";
+// import Bookings from "../pages/Bookings/Bookings";
 import Help from "../pages/Help/Help";
 import About from "../pages/About/About";
 import CustomDarshanPlanner from "../pages/CustomDarshanPlanner/CustomDarshanPlanner";
 import InquiryForm from "../pages/InquiryForm/InquiryForm";
 
 // 👇 NEW IMPORTS
-import Login from "../pages/Auth/Login";
-import Register from "../pages/Auth/Register";
+// import Login from "../pages/Auth/Login";
+// import Register from "../pages/Auth/Register";
 
 // 👇 Protected Route
-import ProtectedRoute from "./ProtectedRoute";
+// import ProtectedRoute from "./ProtectedRoute";
 
 
 const AppRoutes = () => (
   <Routes>
 
     {/* ✅ Auth Routes (without layout) */}
-    <Route path="/login" element={<Login />} />
-    <Route path="/register" element={<Register />} />
+    {/* <Route path="/login" element={<Login />} />
+    <Route path="/register" element={<Register />} /> */}
     
     <Route
       path="/"
@@ -99,7 +99,7 @@ const AppRoutes = () => (
       }
     />
 
-    <Route
+    {/* <Route
       path="/bookings"
       element={
         <ProtectedRoute>
@@ -109,7 +109,7 @@ const AppRoutes = () => (
         </ProtectedRoute>
        
       }
-    />
+    /> */}
 
     <Route
       path="/help"
