@@ -234,6 +234,7 @@ import {
   FaPrayingHands,
   FaPlaceOfWorship,
 } from "react-icons/fa";
+import logo2 from "../../assets/images/logo2.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -243,12 +244,12 @@ const Navbar = () => {
       <nav className="navbar">
         <div className="navbar-content">
 
-          <h2
-            className="nav-title"
+          <div
+            className="nav-logo"
             onClick={() => navigate("/")}
           >
-            Ujjain Yatra
-          </h2>
+            <img src={logo2} alt="Logo 2" />
+          </div>
 
           {/* <div className="nav-links"> */}
             <div className= "nav-menu">

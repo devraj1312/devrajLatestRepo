@@ -1,7 +1,11 @@
+import darshan1 from "../assets/images/dershan1.png";
+import ujjain2 from "../assets/images/ujjain2.png";
+import ujjain3 from "../assets/images/ujjain3.png";
+
 export const darshanData = [
   {
     id: 1,
-    image: "/src/assets/images/dershan1.png",
+    image: darshan1,
     name: "Mahakal VIP Darshan",
     duration: "2 Hours",
 
@@ -26,7 +30,7 @@ export const darshanData = [
 
   {
     id: 2,
-    image: "/src/assets/images/ujjain2.png",
+    image: ujjain2,
     name: "Kal Bhairav Darshan",
     duration: "Half Day",
 
@@ -50,7 +54,7 @@ export const darshanData = [
 
   {
     id: 3,
-    image: "/src/assets/images/ujjain3.png",
+    image: ujjain3,
     name: "Omkareshwar Darshan",
     duration: "Full Day",
 
@@ -75,7 +79,7 @@ export const darshanData = [
 
   {
     id: 4,
-    image: "/src/assets/images/ujjain4.png",
+    image: ujjain3,
     name: "Baglamukhi Darshan",
     duration: "Half Day",
 
@@ -100,7 +104,7 @@ export const darshanData = [
 
   {
     id: 5,
-    image: "/src/assets/images/ujjain6.png",
+    image: ujjain3,
     name: "Mangalnath Darshan",
     duration: "Half Day",
 
@@ -122,76 +126,76 @@ export const darshanData = [
     price: 999,
   },
 
-{
-id: 6,
-image: "/src/assets/images/ujjain7.png",
-name: "Harsiddhi Mata Darshan",
-duration: "2 Hours",
-
-description:
-    "Seek blessings at the famous Shakti Peeth of Maa Harsiddhi in Ujjain.",
-
-specialities: [
-    "Shakti Peeth Visit",
-    "Aarti Experience",
-    "Guide Support",
-],
-
-includes: [
-    "Temple Entry",
-    "Guide",
-    "Assistance Team",
-],
-
-price: 799,
-},
-
-{
-  id: 7,
-  image: "/src/assets/images/ujjain8.png",
-  name: "Chintaman Ganesh Darshan",
-  duration: "Half Day",
+  {
+  id: 6,
+  image: ujjain3,
+  name: "Harsiddhi Mata Darshan",
+  duration: "2 Hours",
 
   description:
-    "Visit the ancient Chintaman Ganesh Temple known for fulfilling devotees' wishes.",
+      "Seek blessings at the famous Shakti Peeth of Maa Harsiddhi in Ujjain.",
 
   specialities: [
-    "Ancient Temple",
-    "Ganesh Darshan",
-    "Comfort Journey",
+      "Shakti Peeth Visit",
+      "Aarti Experience",
+      "Guide Support",
   ],
 
   includes: [
-    "Temple Entry",
-    "Guide",
-    "Travel Support",
+      "Temple Entry",
+      "Guide",
+      "Assistance Team",
   ],
 
-  price: 899,
-},
+  price: 799,
+  },
 
-{
-  id: 8,
-  image: "/src/assets/images/ujjain9.png",
-  name: "84 Mahadev Yatra",
-  duration: "Full Day",
+  {
+    id: 7,
+    image: ujjain3,
+    name: "Chintaman Ganesh Darshan",
+    duration: "Half Day",
 
-  description:
-    "Complete spiritual journey covering the sacred 84 Mahadev temples of Ujjain.",
+    description:
+      "Visit the ancient Chintaman Ganesh Temple known for fulfilling devotees' wishes.",
 
-  specialities: [
-    "84 Mahadev Circuit",
-    "Dedicated Guide",
-    "Full-Day Coverage",
-  ],
+    specialities: [
+      "Ancient Temple",
+      "Ganesh Darshan",
+      "Comfort Journey",
+    ],
 
-  includes: [
-    "Transportation",
-    "Guide",
-    "Temple Assistance",
-    // "Support Team",
-  ],
+    includes: [
+      "Temple Entry",
+      "Guide",
+      "Travel Support",
+    ],
 
-  price: 3499,
-},
+    price: 899,
+  },
+
+  {
+    id: 8,
+    image: ujjain3,
+    name: "84 Mahadev Yatra",
+    duration: "Full Day",
+
+    description:
+      "Complete spiritual journey covering the sacred 84 Mahadev temples of Ujjain.",
+
+    specialities: [
+      "84 Mahadev Circuit",
+      "Dedicated Guide",
+      "Full-Day Coverage",
+    ],
+
+    includes: [
+      "Transportation",
+      "Guide",
+      "Temple Assistance",
+      // "Support Team",
+    ],
+
+    price: 3499,
+  },
 ];

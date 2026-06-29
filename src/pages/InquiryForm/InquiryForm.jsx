@@ -185,8 +185,8 @@ const InquiryForm = () => {
                       placeholder="Enter your phone number"
                       value={phone}
                       onChange={(e) => {
-                        const value = e.target.value.replace(/\D/g, ""); // sirf numbers
-                        setPhone(value.slice(0, 10)); // max 10 digits
+                        const value = e.target.value.replace(/\D/g, ""); 
+                        setPhone(value.slice(0, 10)); 
                       }}
                     />
                   </div>

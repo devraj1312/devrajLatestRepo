@@ -23,19 +23,15 @@ const PoojaCard = ({
 
         <h3>{pooja.name}</h3>
 
-        {/* <span className="booking-duration">
-          Duration: {pooja.duration}
-        </span> */}
-
         <span className="booking-duration">
           <FaClock />
           <span>Duration:</span>
           {pooja.duration}
         </span>
 
-        {/* {pooja.description && (
+        {pooja.description && (
           <p>{pooja.description}</p>
-        )} */}
+        )}
 
         <div className="booking-pooja-footer">
 

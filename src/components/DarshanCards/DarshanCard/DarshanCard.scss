@@ -59,18 +59,14 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-
   background: rgba($primary, 0.1);
   color: $primary;
-
   padding: 5px 10px;
-
   border-radius: 30px;
-
   font-size: 12px;
   font-weight: 600;
-
   margin-bottom: 8px;
+  width: 130px;
 
   svg {
     font-size: 12px;

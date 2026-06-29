@@ -40,25 +40,25 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: "Rajesh Sharma",
+      name: "Devraj Singh Chauhan",
       role: "Founder & CEO",
       text:
         "A passionate traveler and Ujjain native with 15+ years in the hospitality industry.",
     },
     {
-      name: "Priya Patel",
+      name: "Yash Rao",
       role: "Head of Operations",
       text:
         "Ensures every booking runs smoothly from check-in to check-out.",
     },
     {
-      name: "Amit Verma",
+      name: "Harsh Kedar",
       role: "Technology Lead",
       text:
         "Building seamless digital experiences for modern travelers.",
     },
     {
-      name: "Sunita Joshi",
+      name: "Aryan Tiwari",
       role: "Customer Relations",
       text:
         "Dedicated to making every guest feel welcomed and valued.",
@@ -71,21 +71,17 @@ const About = () => {
 
       {/* HERO */}
       <section className="about-hero" style={{ backgroundImage: `url(${bgImage})` }}>
-        {/* <img
-          src="https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=1974&auto=format&fit=crop"
-          alt="about"
-        /> */}
 
         <div className="overlay">   </div>
 
         <div className="about-hero-content">
           <h1>
-            About <span>UjjainYatra</span>
+            About <span>Ujjain Tirth Yatra</span>
           </h1>
 
           <p>
             Your trusted companion for exploring the sacred
-            city of Ujjain with the best hotels and rides.
+            city of Ujjain with the best plans.
           </p>
         </div>
      

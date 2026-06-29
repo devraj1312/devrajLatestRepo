@@ -24,7 +24,7 @@ const SpiritualServices = () => {
 
           <h2>
             Plan Your Complete
-            <span> - Spiritual Journey</span>
+            <br /><span> Spiritual Journey</span>
           </h2>
 
           {/* <p>
@@ -145,10 +145,9 @@ const SpiritualServices = () => {
             </div>
           </Link>
 
-                    {/* HOTEL */}
+          {/* HOTEL */}
           {/* <Link to="/hotels" className="service-card-link"> */}
             <div className="service-card">
-
               <div className="service-image">
 
                 <img

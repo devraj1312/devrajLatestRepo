@@ -7,6 +7,7 @@ import { bookCab, getCabs } from "../../services/cabService";
 // import { showSuccess, showError, showWarning } from "../../utils/toast";
 import AutocompleteInput from "../../components/AutocompleteInput";
 import CabSearch from "../../components/search/CabSearch/CabSearch";
+import cabImg from "../../assets/images/cab5.png";
 
 
 const Cabs = () => {
@@ -137,8 +138,10 @@ const Cabs = () => {
             (inc) => inc.id === imageId
           );
 
+          const SITE_URL = BASE_URL.replace("/backend", "");
+
           const imageUrl = imageFile
-            ? `${BASE_URL}${imageFile.attributes.uri.url}`
+            ? `${SITE_URL}${imageFile.attributes.uri.url}`
             : "https://dummyimage.com/600x400/000/fff&text=Cab";
 
           const getTypeLabel = (item, included) => {
@@ -203,7 +206,7 @@ const Cabs = () => {
       {/* Hero */}
       <section className="cabs-hero">
         <img
-          src="/src/assets/images/cab5.png"
+          src={cabImg}
           alt="Cab Services in Ujjain"
         />
 
