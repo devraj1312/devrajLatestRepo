@@ -4,6 +4,7 @@ import DarshanDetailCard from "../../components/DarshanCards/DarshanDetailCard/D
 import "./Darshan.scss";
 import { darshanData } from "../../data/darshanData";
 import { useNavigate } from "react-router-dom";
+import darshanImg from "../../assets/images/darshan1.png";
 
 const Darshan = () => {
 
@@ -92,7 +93,7 @@ const Darshan = () => {
       <section className="darshan-hero">
 
         <img
-          src="/src/assets/images/darshan1.png"
+          src={darshanImg}
           alt="Darshan Services"
         />
 
@@ -107,13 +108,12 @@ const Darshan = () => {
               </span>
 
               <h1>
-                Book Divine Darshan Packages
+                Book Darshan Packages
               </h1>
 
               <p>
                 Experience sacred temple visits with
-                hassle-free darshan arrangements,
-                guided assistance and comfortable travel.
+                hassle-free darshan arrangements and comfortable travel.
               </p>
 
             </div>

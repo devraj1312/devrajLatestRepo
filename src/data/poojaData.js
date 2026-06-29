@@ -1,3 +1,7 @@
+import pooja1 from "../assets/images/pooja1.png";
+import ujjain2 from "../assets/images/ujjain2.png";
+import ujjain3 from "../assets/images/ujjain3.png";
+
 export const poojaData = [
   {
     id: 1,
@@ -16,7 +20,7 @@ export const poojaData = [
       "Prasad Distribution",
     ],
     price: 5100,
-    image: "/src/assets/images/pooja1.png",
+    image: pooja1,
   },
 
   {
@@ -36,7 +40,7 @@ export const poojaData = [
       "Pooja Samagri",
     ],
     price: 3100,
-    image: "/src/assets/images/pooja1.png",
+    image: pooja1,
   },
 
   {
@@ -56,7 +60,7 @@ export const poojaData = [
       "Prasad",
     ],
     price: 2500,
-    image: "/src/assets/images/pooja1.png",
+    image: pooja1,
   },
 
   {
@@ -76,6 +80,6 @@ export const poojaData = [
       "Prasad Distribution",
     ],
     price: 4100,
-    image: "/src/assets/images/pooja1.png",
+    image: pooja1,
   },
 ];

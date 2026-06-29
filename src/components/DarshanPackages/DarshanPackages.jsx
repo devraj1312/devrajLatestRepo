@@ -3,6 +3,7 @@ import { FaMapMarkerAlt, FaCar, FaUserTie, FaClock } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 import DarshanCard from "../DarshanCards/DarshanCard/DarshanCard";
 import { darshanData } from "../../data/darshanData";
+import cstmImage from "../../assets/images/ujjain10.png";
 
 const DarshanPackages = () => {
   const normalPackages = darshanData
@@ -29,7 +30,7 @@ const DarshanPackages = () => {
           </h2>
 
            <a href="/darshan" className="view-all-link">
-            View All Packages
+            View All
             <FiArrowRight />
           </a>
 
@@ -50,7 +51,7 @@ const DarshanPackages = () => {
           {/* Custom Card */}
           <DarshanCard
             item={{
-              image: "/src/assets/images/ujjain10.png",
+              image: cstmImage,
               name: "Custom Darshan Planner",
               duration: "Flexible",
               price: "Custom",
@@ -64,7 +65,7 @@ const DarshanPackages = () => {
 
           <div>
             <FaMapMarkerAlt />
-            All Packages Include
+            Darshan
           </div>
 
           <div>
@@ -79,7 +80,7 @@ const DarshanPackages = () => {
 
           <div>
             <FaUserTie />
-            Puja Assistance
+            Puja
           </div>
 
         </div>

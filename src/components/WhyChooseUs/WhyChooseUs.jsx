@@ -1,23 +1,27 @@
 import "./WhyChooseUs.scss";
+import expertiesImg from "../../assets/images/experties.png";
+import customizedplanImg from "../../assets/images/customizedplan.png";
+import panditImg from "../../assets/images/pandit.png";
+import experienceImg from "../../assets/images/experience.png";
 
 const features = [
   {
-    image: "/src/assets/images/experties.png",
+    image: expertiesImg,
     title: "Local Expertise",
     desc: "Deep knowledge of Ujjain temples and surrounding areas."
   },
   {
-    image: "/src/assets/images/customizedplan.png",
+    image: customizedplanImg,
     title: "Customized Plans",
     desc: "Tailor-made spiritual packages as per your needs."
   },
   {
-    image: "/src/assets/images/pandit.png",
+    image: panditImg,
     title: "Experienced Pandits",
     desc: "Verified and experienced pandits for rituals & poojas."
   },
   {
-    image: "/src/assets/images/experience.png",
+    image: experienceImg,
     title: "Seamless Experience",
     desc: "Everything at one place for a hassle-free journey."
   }

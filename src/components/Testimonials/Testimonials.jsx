@@ -37,7 +37,7 @@ const Testimonials = () => {
           </h2>
 
           <a href="/about" className="view-all-link">
-            View All Reviews
+            View All
             <FiArrowRight />
           </a>
         </div>
@@ -73,11 +73,11 @@ const Testimonials = () => {
 
         </div>
 
-        <div className="testimonial-dots">
+        {/* <div className="testimonial-dots">
           <span className="active"></span>
           <span></span>
           <span></span>
-        </div>
+        </div> */}
 
       </div>
     </section>

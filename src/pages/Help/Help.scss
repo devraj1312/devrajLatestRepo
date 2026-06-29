@@ -9,16 +9,15 @@
 /* HERO */
 .help-hero {
   position: relative;
-  height: 450px;
+  height: 350px;
   overflow: hidden;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: bottom center;
+  background-position: top center;
 
   .hero-overlay {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
 
@@ -41,21 +40,16 @@
     /* 🔥 ADD ONLY THIS */
     width: 100%;
     max-width: 1100px;
-    // padding: 0 20px;
 
     h1 {
-      font-size: 56px;
+      font-size: 52px;
       font-weight: 700;
       margin-bottom: 12px;
       line-height: 1.2;
-
       width: 100%;
-
       text-align: center;
-
       margin-left: auto;
       margin-right: auto;
-
       font-family: "Playfair Display", serif;
 
       span {
@@ -68,12 +62,12 @@
       }
 
       @media (max-width: 480px) {
-        font-size: 24px;
+        font-size: 34px;
       }
     }
 
     p {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 600;
       max-width: 600px;
       margin: 0 auto 28px;
@@ -81,7 +75,8 @@
       line-height: 1.7;
 
       @media (max-width: 768px) {
-        font-size: 13px;
+        font-size: 15px;
+        max-width: 300px;
       }
     }
   }
@@ -93,7 +88,6 @@
     border-radius: 14px;
     padding: 0 16px;
     height: 54px;
-
     display: flex;
     align-items: center;
     gap: 10px;
@@ -118,6 +112,7 @@
     @media (max-width: 768px) {
       height: 50px;
       border-radius: 12px;
+      max-width: 300px;
 
       input {
         font-size: 13px;
@@ -126,43 +121,16 @@
   }
 }
 
-/* COMMON SECTION */
-.section-header {
-  margin-bottom: 28px;
-
-  h2 {
-    font-size: 28px;
-    font-weight: 700;
-    color: $text;
-
-    @media (max-width: 768px) {
-      font-size: 22px;
-    }
-  }
-
-  p {
-    color: $light-gray;
-    margin-top: 8px;
-    font-size: 14px;
-    line-height: 1.7;
-  }
-
-  &.center {
-    text-align: center;
-  }
-}
-
 /* CATEGORY */
 .help-categories {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 70px 20px 40px;
+  padding: 25px 20px 40px;
 
 .section-header {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   text-align: center;
   margin-bottom: 45px;
 
@@ -175,6 +143,9 @@
       span {
         color: $primary;
       }
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
   }
 
   p {
@@ -183,6 +154,9 @@
     line-height: 1.8;
     font-size: 18px;
     margin: 0;
+    @media (max-width: 992px) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -202,34 +176,22 @@
 
   .category-card {
     background: $white;
-
     border-radius: 22px;
-
     padding: 28px 24px;
-
     text-align: center;
-
     position: relative;
-
     overflow: hidden;
-
     border: 1px solid rgba($primary, 0.08);
-
     box-shadow: 0 10px 30px rgba($primary, 0.08);
-
     transition: all 0.35s ease;
 
     &::before {
       content: "";
-
       position: absolute;
-
       top: 0;
       left: 0;
-
       width: 100%;
       height: 5px;
-
       background: linear-gradient(
         90deg,
         $primary,
@@ -239,24 +201,19 @@
 
     &:hover {
       transform: translateY(-8px);
-
       box-shadow: 0 20px 40px rgba($primary, 0.15);
     }
 
     .icon-box {
       width: 72px;
       height: 72px;
-
       margin: 0 auto 20px;
-
       border-radius: 20px;
-
       background: linear-gradient(
         135deg,
         rgba($primary, 0.12),
         rgba($warning, 0.12)
       );
-
       display: flex;
       align-items: center;
       justify-content: center;
@@ -270,19 +227,14 @@
     h3 {
       font-size: 20px;
       font-weight: 700;
-
       color: $text;
-
       margin-bottom: 12px;
     }
 
     p {
       color: $light-gray;
-
       line-height: 1.8;
-
       font-size: 14px;
-
       margin-bottom: 0;
     }
   }
@@ -292,16 +244,14 @@
 .faq-section {
   max-width: 950px;
   margin: 0 auto;
-  padding: 40px 20px 80px;
+  padding: 20px 20px 20px;
 
   .section-header.center {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     text-align: center;
-
-    margin-bottom: 45px;
+    margin-bottom: 35px;
 
     h2 {
       font-size: 38px;
@@ -312,16 +262,19 @@
       span {
         color: $primary;
       }
+      @media (max-width: 768px) {
+        font-size: 24px;
+      }
     }
 
     p {
       max-width: 650px;
-
       color: $light-gray;
-
       line-height: 1.8;
-
       font-size: 16px;
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
     }
   }
 
@@ -333,27 +286,18 @@
 
   .faq-item {
     background: $white;
-
     border-radius: 18px;
-
     overflow: hidden;
-
     border: 1px solid rgba($primary, 0.08);
-
     box-shadow: 0 8px 24px rgba($primary, 0.05);
-
     transition: all 0.35s ease;
-
     position: relative;
 
     &::before {
       content: "";
-
       position: absolute;
-
       top: 0;
       left: 0;
-
       width: 4px;
       height: 100%;
 
@@ -362,14 +306,12 @@
         $primary,
         $warning
       );
-
       opacity: 0;
       transition: 0.3s ease;
     }
 
     &:hover {
       transform: translateY(-3px);
-
       box-shadow: 0 15px 35px rgba($primary, 0.12);
     }
 
@@ -397,32 +339,22 @@
 
   .faq-question {
     width: 100%;
-
     background: transparent;
     border: none;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 22px 24px;
-
     cursor: pointer;
-
     text-align: left;
-
     transition: all 0.3s ease;
 
     span {
       font-size: 16px;
       font-weight: 600;
-
       color: $text;
-
       line-height: 1.6;
-
       padding-right: 15px;
-
       @media (max-width: 768px) {
         font-size: 14px;
       }
@@ -430,29 +362,21 @@
 
     svg {
       color: $primary;
-
       transition: all 0.3s ease;
-
       flex-shrink: 0;
-
       font-size: 16px;
     }
   }
 
   .faq-answer {
     max-height: 0;
-
     overflow: hidden;
-
     transition: all 0.35s ease;
 
     p {
       color: $light-gray;
-
       line-height: 1.8;
-
       font-size: 16px;
-
       margin: 0;
     }
   }
@@ -462,52 +386,47 @@
 .contact-support-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 20px 80px;
+  padding: 20px 20px 40px;
 
   .section-support-header.center {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     text-align: center;
-
     margin-bottom: 30px;
 
     h2 {
+      margin-top: 0px;
       font-size: 38px;
       font-weight: 700;
       color: $text;
       margin-bottom: 0px;
-
       font-family: "Playfair Display", serif;
-
       span {
         color: $primary;
+      }
+      @media (max-width: 768px) {
+        font-size: 28px;
       }
     }
 
     p {
       max-width: 650px;
-
       color: $light-gray;
-
       line-height: 1.8;
-
       font-size: 16px;
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
     }
   }
 
   .support-grid {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 24px;
-
     max-width: 950px;
-
     margin: 0 auto;
-
     @media (max-width: 992px) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -519,36 +438,22 @@
 
   .support-card {
     background: $white;
-
     border-radius: 22px;
-
     padding: 30px 24px;
-
     text-align: center;
-
     position: relative;
-
     overflow: hidden;
-
     border: 1px solid rgba($primary, 0.08);
-
     box-shadow: 0 10px 30px rgba($primary, 0.08);
-
     transition: all 0.35s ease;
-
     cursor: pointer;
-
     &::before {
       content: "";
-
       position: absolute;
-
       top: 0;
       left: 0;
-
       width: 100%;
       height: 5px;
-
       background: linear-gradient(
         90deg,
         $primary,
@@ -558,25 +463,20 @@
 
     &:hover {
       transform: translateY(-8px);
-
       box-shadow: 0 20px 40px rgba($primary, 0.15);
     }
 
     .support-icon {
       width: 72px;
       height: 72px;
-
       border-radius: 20px;
-
       margin: 0 auto 20px;
       transition: all 0.3s ease;
-
       background: linear-gradient(
         135deg,
         rgba($primary, 0.12),
         rgba($warning, 0.12)
       );
-
       display: flex;
       align-items: center;
       justify-content: center;
@@ -594,29 +494,21 @@
     h3 {
       font-size: 20px;
       font-weight: 700;
-
       color: $text;
-
       margin-bottom: 10px;
     }
 
     h4 {
       color: $primary;
-
       font-size: 16px;
-
       font-weight: 600;
-
       margin-bottom: 8px;
     }
 
     span {
       display: block;
-
       color: $light-gray;
-
       font-size: 13px;
-
       line-height: 1.6;
     }
   }
