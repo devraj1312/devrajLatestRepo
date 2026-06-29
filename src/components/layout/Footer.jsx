@@ -7,6 +7,8 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
+import { HiOutlineChevronRight } from "react-icons/hi2"; 
+import footerlogo from "../../assets/images/logo4.png";
 
 import { Link } from "react-router-dom";
 import "./Footer.scss";
@@ -14,9 +16,7 @@ import "./Footer.scss";
 const Footer = () => {
   return (
     <footer className="footer">
-
       <div className="container">
-
         <div className="footer-grid">
 
           {/* Company Info */}
@@ -24,14 +24,9 @@ const Footer = () => {
 
             <div className="footer-logo">
               <img
-                src="/src/assets/images/logo2.png"
-                alt="Ujjain Yatra"
+                src={footerlogo}
+                alt="footer logo"
               />
-
-              <div>
-                <h3>Ujjain</h3>
-                <span>Spiritual Journey</span>
-              </div>
             </div>
 
             <p>
@@ -49,24 +44,6 @@ const Footer = () => {
 
           </div>
 
-          {/* Quick Links */}
-
-          <div className="footer-column quick-links-column">
-
-            <h4>Quick Links</h4>
-
-            <ul>
-              <li><Link to="/">Home</Link></li>
-              {/* <li><Link to="/hotels">Hotels</Link></li> */}
-              <li><Link to="/cabs">Cabs</Link></li>
-              <li><Link to="/pooja">Pooja</Link></li>
-              <li><Link to="/darshan">Darshan Packages</Link></li>
-              <li><Link to="/about">About Us</Link></li>
-              {/* <li><Link to="/contact">Contact Us</Link></li> */}
-            </ul>
-
-          </div>
-
           {/* Services */}
 
           <div className="footer-column services-column">
@@ -74,12 +51,10 @@ const Footer = () => {
             <h4>Our Services</h4>
 
             <ul>
-              {/* <li><Link to="/hotels">Hotel Bookings</Link></li> */}
               <li><Link to="/cabs">Cab Services</Link></li>
               <li><Link to="/pooja">Pooja Bookings</Link></li>
               <li><Link to="/darshan">Darshan Packages</Link></li>
               <li><Link to="/custom-pooja">Custom Pooja</Link></li>
-              {/* <li><Link to="/group-booking">Group Bookings</Link></li> */}
             </ul>
 
           </div>
@@ -91,11 +66,26 @@ const Footer = () => {
             <h4>Support</h4>
 
             <ul>
-              <li><Link to="/help">Help Center</Link></li>
-              <li><Link to="/faq">FAQs</Link></li>
-              <li><Link to="/cancellation">Cancellation Policy</Link></li>
-              <li><Link to="/terms">Terms & Conditions</Link></li>
-              <li><Link to="/privacy">Privacy Policy</Link></li>
+              <li>
+                <HiOutlineChevronRight className="footer-icon" />
+                <Link to="/help">Help Center</Link>
+              </li>
+              <li>
+                <HiOutlineChevronRight className="footer-icon" />
+                <Link to="/help">FAQs</Link>
+              </li>
+              <li>
+                <HiOutlineChevronRight className="footer-icon" />
+                <Link to="/about">About US</Link>
+              </li>
+              <li>
+                <HiOutlineChevronRight className="footer-icon" />
+                <Link to="/help">Terms & Conditions</Link>
+              </li>
+              <li>
+                <HiOutlineChevronRight className="footer-icon" />
+                <Link to="/help">Reviews</Link>
+              </li>
             </ul>
 
           </div>
@@ -133,7 +123,7 @@ const Footer = () => {
         <div className="footer-bottom">
 
           <span>
-            © 2026 UjjainYatra. All Rights Reserved.
+            © 2026 UjjainTirthYatra. All Rights Reserved.
           </span>
 
           <span>
@@ -141,9 +131,7 @@ const Footer = () => {
           </span>
 
         </div>
-
       </div>
-
     </footer>
   );
 };

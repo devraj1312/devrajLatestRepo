@@ -26,7 +26,7 @@ const DarshanCard = ({ item }) => {
           {item.duration}
         </span>
 
-        {/* <p>{item.description}</p> */}
+        <p>{item.description}</p>
 
         <div className="darshan-package-footer">
 

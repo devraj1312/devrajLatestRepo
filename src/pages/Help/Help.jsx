@@ -1,7 +1,7 @@
 // src/pages/Help/Help.jsx
 
 import { useState } from "react";
-import bgImage from "../../assets/images/about-hero.png";
+import bgImage from "../../assets/images/hotel5.png";
 
 import {
   FaHotel,

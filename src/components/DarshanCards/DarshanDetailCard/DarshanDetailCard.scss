@@ -130,48 +130,10 @@
 
 .darshan-price {
   width: 170px;
-
   display: flex;
   flex-direction: column;
-
-  // justify-content: flex-start;
-
   align-items: flex-end;
-
   text-align: right;
-
-  @media (max-width: 768px) {
-    
-      width: 100%;
-
-      display: grid;
-      grid-template-columns: 1fr auto;
-      grid-template-areas:
-        "duration duration"
-        "price button";
-
-      align-items: center;
-      gap: 10px;
-
-      text-align: left;
-    
-
-    .duration {
-      grid-area: duration;
-    }
-
-    .price {
-      grid-area: price;
-      margin: 0 !important;
-    }
-
-    button {
-      grid-area: button;
-
-      min-width: 100px;
-      padding: 10px 16px;
-    }
-  }
 
   .duration {
     display: flex;
@@ -180,6 +142,7 @@
     color: $primary;
     font-weight: 600;
     font-size: 14px;
+    margin-bottom: 8px;
 
     svg {
       font-size: 13px;
@@ -188,45 +151,30 @@
 
   .price {
     margin-top: auto;
+    margin-bottom: 12px;
     font-size: 20px;
     font-weight: 700;
-
     color: $primary;
 
-    margin-bottom: 12px;
-
     span {
+      margin-left: 4px;
       font-size: 13px;
       font-weight: 400;
-
       color: $light-gray;
-
-      margin-left: 4px;
     }
   }
 
   button {
     min-width: 120px;
-
     border: none;
     border-radius: 10px;
-
     padding: 10px 18px;
-
-    background: linear-gradient(
-      135deg,
-      $accent,
-      $secondary
-    );
-
+    background: linear-gradient(135deg, $accent, $secondary);
     color: $white;
-
-    font-weight: 600;
     font-size: 14px;
-
+    font-weight: 600;
     cursor: pointer;
-
-    transition: 0.3s ease;
+    transition: .3s ease;
 
     &:hover {
       transform: translateY(-2px);
@@ -234,10 +182,52 @@
   }
 }
 
+/* ================= MOBILE ================= */
+
 @media (max-width: 768px) {
 
-  .darshan-info {
+  .darshan-price {
+    width: 100%;
 
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "duration duration"
+      "price button";
+
+    align-items: center;
+    row-gap: 10px;
+    column-gap: 12px;
+    text-align: left;
+  }
+
+  .darshan-price .duration {
+    grid-area: duration;
+    margin-bottom: 0;
+    justify-self: start;
+  }
+
+  .darshan-price .price {
+    grid-area: price;
+    margin: 0;
+    justify-self: start;
+    font-size: 18px;
+
+    span {
+      font-size: 11px;
+    }
+  }
+
+  .darshan-price button {
+    grid-area: button;
+    justify-self: end;
+
+    min-width: 95px;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .darshan-info {
     .info-section {
       flex: 1;
       min-width: 0;
@@ -253,5 +243,4 @@
       }
     }
   }
-
 }

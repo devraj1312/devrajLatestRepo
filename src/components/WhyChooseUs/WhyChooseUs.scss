@@ -3,19 +3,17 @@
 .why-choose {
   position: relative;
   overflow: hidden;
-
   padding-top: 10px;
   margin-bottom: 20px;
+  background: linear-gradient(
+      rgba($secondary2, 0.90),
+      rgba($secondary2, 0.80)
+  ),
+  url("/src/assets/images/ujjain11.png");
 
-    background: linear-gradient(
-        rgba($secondary2, 0.90),
-        rgba($secondary2, 0.80)
-    ),
-    url("/src/assets/images/ujjain11.png");
-
-    background-size: cover;
-    background-position: center 40%;
-    background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
 }
 
 .why-choose .container {
@@ -41,7 +39,9 @@
     }
 
     @media (max-width: 768px) {
-      font-size: 28px;
+      margin-bottom: 0px;
+      margin-top: 10px;
+      font-size: 20px;
     }
   }
 
@@ -50,6 +50,11 @@
     color: $warning;
     font-size: 20px;
     margin: 0px;
+    @media (max-width: 768px) {
+      margin-bottom: 0px;
+      margin-top: 0px;
+      font-size: 10px;
+    }
   }
 }
 
@@ -59,12 +64,12 @@
   margin-bottom: 15px;
 
   @media (max-width: 992px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
   }
 
   @media (max-width: 576px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -93,7 +98,7 @@
 
 @media (max-width: 576px) {
   .why-item {
-    padding: 0 8px;
+    padding: 0px;
       p {
         display: none;
       }
@@ -105,14 +110,14 @@
   margin-bottom: 0px;
 
   img {
-    width: 90%;
+    width: 50%;
     height: 100%;
     object-fit: contain; 
   }
   @media (max-width: 576px) {
     img{
-      width: 110%;
-     height: 100%;
+      width: 60%;
+      height: 100%;
     }
   }
 }
@@ -128,7 +133,7 @@
 }
 @media (max-width: 576px) {
   .why-item h3 {
-    font-size: 20px;
+    font-size: 10px;
   }
 }
 

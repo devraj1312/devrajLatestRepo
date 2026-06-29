@@ -1,9 +1,11 @@
 import "./HeroSection.scss";
 
-import bgImage from "../../assets/images/ujjain12.png";
+import bgImage from "../../assets/images/bgImage1.png";
+import bgImage2 from "../../assets/images/bgImage2.png";
+import logo4 from "../../assets/images/logo4.png";
 import TempleSearchWrapper from "../TempleSearchWrapper/TempleSearchWrapper";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import {
   FaShieldAlt,
@@ -26,30 +28,48 @@ const HeroSection = ({
   setHotelLocation,
 }) => {
 
-  const [activeTab, setActiveTab] = useState("cabs");
+    const [activeTab, setActiveTab] = useState("cabs");
+    const [bg, setBg] = useState(
+    window.innerWidth <= 768 ? bgImage2 : bgImage
+    );
+
+    useEffect(() => {
+    const handleResize = () => {
+        setBg(window.innerWidth <= 768 ? bgImage2 : bgImage);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
 
   return (
     <>
         <section
-        className="hero"
-        style={{
-            backgroundImage: `url(${bgImage})`,
-        }}
+            className="hero"
+            style={{ backgroundImage: `url(${bg})` }}
         >
         <div className="overlay">
 
             <div className="hero-content">
 
+                <img
+                    src={logo4}
+                    alt="Ujjain Logo"
+                    className="hero-logo"
+                />
+
                 <h1>
                     Experience Divine
-                    <span> Ujjain</span>
+                    <span> Ujjain </span>
                 </h1>
 
                 <p>
-                    Plan your spiritual journey with our
+                    Plan your spiritual journey with our 
                     <br />
-                    customized Pooja, Darshan,
-                    Stay & Travel Services.
+                    Customized Pooja, Darshan,
+                    Stay <br /> & Travel Services.
                 </p>
 
                 {/* STATS */}

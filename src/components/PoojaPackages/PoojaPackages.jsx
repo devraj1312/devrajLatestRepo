@@ -20,7 +20,7 @@ const PoojaPackages = () => {
           </h2>
 
           <a href="/pooja" className="view-all-link">
-            View All Pooja
+            View All
             <FiArrowRight />
           </a>
         </div>

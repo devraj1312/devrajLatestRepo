@@ -1,9 +1,7 @@
-import { useState } from "react";
 import "./DarshanDetailCard.scss";
 import {
   FaClock,
   FaCheckCircle,
-  // FaCar,
   FaMapMarkerAlt,
   FaUserTie,
   FaShieldAlt,
@@ -99,25 +97,19 @@ const DarshanDetailCard = ({
             <span>/ Person</span>
           </div>
 
-          {/* <button onClick={() => onAdd(darshan)} >
-            {buttonText}
-          </button> */}
-<button
-  onClick={() => {
-    if (isAdded) {
-      onNext();
-    } else {
-      onAdd(darshan);
-    }
-  }}
->
-  {isAdded ? "Next" : "+ Add"}
-</button>
-
+          <button
+            onClick={() => {
+              if (isAdded) {
+                onNext();
+              } else {
+                onAdd(darshan);
+              }
+            }}
+          >
+            {isAdded ? "Next" : "+ Add"}
+          </button>
         </div>
-
       </div>
-
     </div>
   );
 };

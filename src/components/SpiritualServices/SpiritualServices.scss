@@ -18,7 +18,7 @@
       font-weight: 700;
       font-family: "Playfair Display", serif;
       color: $text;
-      margin-bottom: 8px;
+      margin-bottom: 4px;
       span {
         color: $primary;
       }
@@ -80,7 +80,7 @@
       border-radius: 25px;
       background: linear-gradient(
         135deg,
-        $accent,$blue
+        $info-bg,$blue
       );
 
       display: flex;

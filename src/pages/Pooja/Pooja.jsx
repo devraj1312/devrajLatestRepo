@@ -4,6 +4,7 @@ import PoojaDetailCard from "../../components/PoojaCards/PoojaDetailCard/PoojaDe
 import "./Pooja.scss";
 import { poojaData } from "../../data/poojaData";
 import { useNavigate } from "react-router-dom";
+import poojaImg from "../../assets/images/pooja2.png";
 
 const Pooja = () => {
 
@@ -106,7 +107,7 @@ const Pooja = () => {
       <section className="pooja-hero">
 
         <img
-          src="/src/assets/images/pooja2.png"
+          src={poojaImg}
           alt="Pooja Services"
         />
 

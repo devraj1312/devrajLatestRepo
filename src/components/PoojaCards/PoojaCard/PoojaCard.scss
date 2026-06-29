@@ -37,32 +37,20 @@
       font-weight: 700;
       margin-top: 0;
       margin-bottom: 10px;
-    //   min-height: 45px;
     }
-
-    // .booking-duration {
-    //   display: block;
-    //   color: #777;
-    //   font-size: 13px;
-    //   margin-bottom: 5px;
-    // }
 
     .booking-duration {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-
       background: rgba($primary, 0.1);
       color: $primary;
-
       padding: 5px 10px;
-
       border-radius: 30px;
-
       font-size: 12px;
       font-weight: 600;
-
       margin-bottom: 8px;
+      width: 150px;
 
       svg {
         font-size: 12px;
