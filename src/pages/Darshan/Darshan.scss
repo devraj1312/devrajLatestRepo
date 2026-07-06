@@ -350,9 +350,15 @@
     }
   }
 
+    .darshan-booking-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .summary-card,
   .custom-request-card {
-    padding: 12px;
+    padding: 16px;
   }
 
   .custom-request-card {

@@ -56,6 +56,7 @@
       font-weight: 700;
       margin: 20px 0 10px;
       line-height: 1.1;
+      color: $white;
     }
 
     p {
@@ -63,6 +64,7 @@
       line-height: 1.8;
       color: rgba(255, 255, 255, 0.9);
       max-width: 550px;
+      text-align: left;
     }
   }
 }
@@ -330,5 +332,242 @@
   .submit-btn {
     height: 48px;
     font-size: 14px;
+  }
+}
+
+/* ==========================
+   Inquiry Success Popup
+========================== */
+
+.inquiry-success-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba($secondary2, 0.6);
+
+  backdrop-filter: blur(4px);
+
+  animation: inquiryOverlayFade 0.25s ease;
+}
+
+.inquiry-success-popup {
+  width: 100%;
+  max-width: 440px;
+
+  box-sizing: border-box;
+
+  padding: 35px 30px 30px;
+
+  background: $white;
+
+  border: 1px solid rgba($primary, 0.12);
+  border-radius: 20px;
+
+  box-shadow: 0 20px 60px rgba($secondary2, 0.25);
+
+  text-align: center;
+
+  animation: inquiryPopupShow 0.3s ease;
+
+  h2 {
+    margin: 18px 0 10px;
+
+    color: $primary;
+
+    font-size: 27px;
+  }
+}
+
+
+/* ==========================
+   Success Icon
+========================== */
+
+.success-checkmark {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: $success-bg;
+  color: $success;
+
+  font-size: 38px;
+  font-weight: 700;
+
+  border: 5px solid rgba($success, 0.12);
+}
+
+
+/* ==========================
+   Success Message
+========================== */
+
+.success-message {
+  max-width: 340px;
+
+  margin: 0 auto 22px;
+
+  color: $light-gray;
+
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+
+/* ==========================
+   Booking ID Box
+========================== */
+
+.booking-id-box {
+  padding: 17px 20px;
+
+  margin-bottom: 14px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 6px;
+
+  background: rgba($primary, 0.06);
+
+  border: 1px dashed rgba($primary, 0.4);
+  border-radius: 12px;
+
+  .booking-label {
+    color: $light-gray;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.8px;
+  }
+
+  strong {
+    color: $primary;
+
+    font-size: 23px;
+
+    letter-spacing: 1px;
+
+    word-break: break-word;
+  }
+}
+
+
+/* ==========================
+   Booking Note
+========================== */
+
+.booking-note {
+  margin: 0 0 24px;
+
+  color: $light-gray;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* ==========================
+   Done Button
+========================== */
+
+.popup-done-btn {
+  width: 100%;
+
+  padding: 13px 25px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: $primary;
+  color: $white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  &:hover {
+    background: $secondary;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 6px 18px rgba($primary, 0.2);
+  }
+}
+
+
+/* ==========================
+   Animations
+========================== */
+
+@keyframes inquiryOverlayFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes inquiryPopupShow {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 480px) {
+  .inquiry-success-popup {
+    padding: 28px 20px 22px;
+
+    h2 {
+      font-size: 23px;
+    }
+  }
+
+  .success-checkmark {
+    width: 62px;
+    height: 62px;
+
+    font-size: 32px;
+  }
+
+  .booking-id-box {
+    strong {
+      font-size: 19px;
+    }
   }
 }

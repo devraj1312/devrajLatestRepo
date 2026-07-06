@@ -23,15 +23,9 @@ const SpiritualServices = () => {
         <div className="service-heading">
 
           <h2>
-            Plan Your Complete
-            <br /><span> Spiritual Journey</span>
+            Plan Your
+            <span> Spiritual Journey</span>
           </h2>
-
-          {/* <p>
-            Book hotels, cabs, pooja and
-            darshan services for a seamless
-            Ujjain experience.
-          </p> */}
 
         </div>
 
