@@ -6,6 +6,7 @@ import logo4 from "../../assets/images/logo4.png";
 import TempleSearchWrapper from "../TempleSearchWrapper/TempleSearchWrapper";
 
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 import {
   FaShieldAlt,
@@ -15,6 +16,7 @@ import {
   FaLock,
   FaClipboardCheck,
 } from "react-icons/fa";
+import { FiArrowRight } from "react-icons/fi";
 
 const HeroSection = ({
   handleCabSearch,
@@ -43,6 +45,8 @@ const HeroSection = ({
     return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    const navigate = useNavigate();
+
 
   return (
     <>
@@ -61,20 +65,27 @@ const HeroSection = ({
                 />
 
                 <h1>
-                    Experience Divine
-                    <span> Ujjain </span>
+                    Ujjain's
+                    <span>1st Trip Planner</span>
+                    <small>& Travel Partner</small>
+
+                    <div className="hero-divider">
+                        ༺━━━━━━━━━━ ❖ ━━━━━━━━━━༻
+                    </div>
                 </h1>
 
                 <p>
-                    Plan your spiritual journey with our 
-                    <br />
-                    Customized Pooja, Darshan,
-                    Stay <br /> & Travel Services.
+                    Plan Your Custom Trip, <span>Your Way.</span>
                 </p>
+
+                <button className="hero-btn" onClick={() => navigate("/custom-darshan-planner")}>
+                    Plan Your Trip
+                    <FiArrowRight />
+                </button>
 
                 {/* STATS */}
 
-                <div className="divine-stats-bar">
+                {/* <div className="divine-stats-bar">
 
                     <div className="divine-stat-item">
                     <div className="divine-stat-icon">
@@ -112,7 +123,7 @@ const HeroSection = ({
                     </div>
                     </div>
 
-                </div>
+                </div> */}
 
                 {/* SEARCH */}
 
@@ -156,17 +167,6 @@ const HeroSection = ({
             <p>Services</p>
             </div>
         </div>
-
-        {/* <div className="feature-item">
-            <div className="icon">
-            <FaHeadset />
-            </div>
-
-            <div className="text">
-            <h4>24x7 Customer</h4>
-            <p>Support</p>
-            </div>
-        </div> */}
 
         <div className="feature-item">
             <div className="icon">
