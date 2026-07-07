@@ -92,7 +92,7 @@ const PoojaDetailCard = ({
               <span>/ Pooja</span>
             </div>
 
-            <button
+            <button className={isAdded ? "added-btn" : ""}
               onClick={() => {
                 if (!isAdded) {
                   onAdd(pooja);

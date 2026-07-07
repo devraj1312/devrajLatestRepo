@@ -1,7 +1,7 @@
 import "./InquiryForm.scss";
 import heroImg from "/src/assets/images/darshan1.png";
 import { FaPaperPlane, FaPhoneAlt } from "react-icons/fa";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { submitInquiry } from "../../services/inquiryService";
 import {
@@ -18,11 +18,20 @@ const InquiryForm = () => {
   const [time, setTime] = useState("");
   const orderAmount = state?.totalAmount || 0;
 
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [bookingId, setBookingId] = useState("");
+
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
 
   useEffect(() => {
     setCategory(state?.category || "");
+
+    // Custom Trip Planner
+    if (state?.description) {
+      setDescription(state.description);
+      return;
+    }
 
     // Darshan
     if (state?.selectedPackages?.length) {
@@ -59,17 +68,20 @@ const InquiryForm = () => {
     // Cab Booking
     if (state?.selectedCab) {
       setDescription(
-    `Selected Cab: ${state.selectedCab.name}
+        `Selected Cab: ${state.selectedCab.name}
 
-    Pickup Location: ${state.pickup}
+        Pickup Location: ${state.pickup}
 
-    Drop Location: ${state.drop}
+        Drop Location: ${state.drop}
 
-    Rate: ₹${state.selectedCab.price}/km`
+        Rate: ₹${state.selectedCab.price}/km`
       );
 
       return;
     }
+
+    // Agar direct inquiry form open ho
+    setDescription("");
 
   }, [state]);
 
@@ -93,8 +105,24 @@ const InquiryForm = () => {
       });
 
       if (data?.status === "success") {
-        showSuccess(
-          `Inquiry Submitted Successfully\nClient ID: ${data.client_id}`
+        setBookingId(data.client_id);
+        setShowSuccessPopup(true);
+
+          const message = `Hello,
+            I have submitted an inquiry on your website.
+
+            Booking ID: ${data.client_id}
+
+            Name: ${name}
+            Phone: ${phone}
+            Category: ${category}
+            Date: ${date}
+            Time: ${time};
+            Description: ${description}`;
+
+        window.open(
+          `https://wa.me/917470922939?text=${encodeURIComponent(message)}`,
+          "_blank"
         );
 
         setName("");
@@ -113,6 +141,13 @@ const InquiryForm = () => {
 
       showError(data?.message || "Server Error");
     }
+  };
+
+  const navigate = useNavigate();
+
+  const handlePopupDone = () => {
+    setShowSuccessPopup(false);
+    navigate("/");
   };
 
   return (
@@ -154,7 +189,7 @@ const InquiryForm = () => {
                 <FaPaperPlane />
               </div>
 
-              <h2>Send Us Your Inquiry</h2>
+              <h2>Submit Your Booking Request</h2>
             </div>
 
             <p>
@@ -232,12 +267,9 @@ const InquiryForm = () => {
                 <label>Description</label>
 
                 <textarea
-                  rows="6"
+                  rows="10"
                   value={description}
                   readOnly              
-                  onChange={(e) =>
-                    setDescription(e.target.value)
-                  }
                 />
               </div>
 
@@ -251,6 +283,52 @@ const InquiryForm = () => {
           </div>
         </div>
       </section>
+
+      {/* Inquiry Success Popup */}
+      {showSuccessPopup && (
+        <div
+          className="inquiry-success-overlay"
+          onClick={() => setShowSuccessPopup(false)}
+        >
+          <div
+            className="inquiry-success-popup"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="success-checkmark">
+              ✓
+            </div>
+
+            <h2>Inquiry Submitted!</h2>
+
+            <p className="success-message">
+              Your inquiry has been submitted successfully.
+              Our team will contact you shortly.
+            </p>
+
+            <div className="booking-id-box">
+              <span className="booking-label">
+                Your Booking ID
+              </span>
+
+              <strong>
+                {bookingId}
+              </strong>
+            </div>
+
+            <p className="booking-note">
+              Please save your Booking ID for future reference.
+            </p>
+
+            <button
+              type="button"
+              className="popup-done-btn"
+              onClick={handlePopupDone}
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 };

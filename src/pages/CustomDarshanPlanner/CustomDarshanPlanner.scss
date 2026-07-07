@@ -1,7 +1,7 @@
 @use "../../styles/variables.scss" as *;
 
 .custom-darshan-planner {
-  margin-top: 40px;
+  margin: 40px 0;
 }
 
 .planner-header {
@@ -18,121 +18,1117 @@
   }
 }
 
-.planner-grid {
-  display: grid;
-  grid-template-columns: 260px 1fr 280px 250px;
-  gap: 20px;
+/* ==========================
+  Darshan Section
+========================== */
 
-  @media (max-width: 1200px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.planner-card {
+.darshan-planner-card {
   background: $white;
   border-radius: 18px;
-  padding: 20px;
+  padding: 25px;
   border: 1px solid rgba($primary, .12);
   box-shadow: 0 5px 20px rgba($primary,.08);
 
-  h4 {
-    margin-top: 0;
-    color: $primary;
+  h4{
+    margin:0 0 20px;
+    color:$primary;
+    text-align: center;
+    font-size: 24px;
   }
 }
+
+.selected-places-section {
+  margin-bottom: 25px;
+
+  .field-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: $primary;
+  }
+
+  textarea {
+    width: 90%;
+    min-height: 70px;
+    resize: none;
+    padding: 12px 15px;
+    border: 1px solid rgba($primary, 0.2);
+    border-radius: 10px;
+    background: #f8fafc;
+    margin-bottom: 15px;
+    color: $text;
+    font-size: 15px;
+    outline: none;
+  }
+}
+
+.selected-places-box{
+  min-height:20px;
+  border:1px solid rgba($primary,.2);
+  border-radius:10px;
+  padding:12px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:18px;
+  background:#f8fafc;
+}
+
+.place-chip{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  background:rgba($primary,.08);
+  color:$primary;
+  border-radius:50px;
+  font-size:14px;
+  font-weight:500;
+
+  button{
+    width:20px;
+    height:20px;
+    border:none;
+    border-radius:50%;
+    background:$primary;
+    color:$white;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:12px;
+    line-height:1;
+
+    &:hover{
+      background:$danger;
+    }
+  }
+}
+
+.placeholder{
+  color:$light-gray;
+  font-size:14px;
+}
+
+/* ==========================
+   Custom Place
+========================== */
+
+.custom-place-box {
+  display: flex;
+  gap: 15px;
+
+  input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid rgba($primary, 0.2);
+    border-radius: 10px;
+    outline: none;
+
+    &:focus {
+      border-color: $primary;
+    }
+  }
+
+  .add-place-btn {
+    padding: 12px 24px;
+    background: $primary;
+    color: $white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: .3s;
+
+    &:hover {
+      background: $secondary;
+    }
+  }
+}
+
+/* ==========================
+   Checkbox List
+========================== */
 
 .places-list {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 15px;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 25px;
 
   label {
+    width: calc(22% - 12px);
     display: flex;
-    gap: 10px;
     align-items: center;
-  }
-}
-
-.itinerary-item {
-  display: flex;
-  gap: 15px;
-  padding: 12px 0;
-  border-bottom: 1px solid #eee;
-
-  span {
-    font-size: 22px;
-    font-weight: 700;
-    color: $primary;
-  }
-
-  h5 {
-    margin: 0;
-  }
-
-  p {
-    margin: 0;
-    color: #777;
-  }
-}
-
-.trip-card {
-  select {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 12px;
+    gap: 10px;
+    padding: 12px 15px;
+    border: 1px solid rgba($primary, .15);
     border-radius: 10px;
-    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: .3s;
+
+    &:hover {
+      border-color: $primary;
+      background: rgba($primary, .05);
+    }
+
+    input {
+      width: 18px;
+      height: 18px;
+      accent-color: $primary;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    span {
+      font-size: 15px;
+      color: $text;
+      line-height: 1.4;
+    }
   }
 }
 
-.summary-card {
-  ul {
-    padding-left: 18px;
-    color: #666;
-  }
-
-  .cost {
-    font-size: 28px;
-    font-weight: 700;
-    color: $primary;
-    margin: 20px 0;
-  }
-}
-
-.save-btn,
-.planner-card button {
-  width: 100%;
-  border: none;
-  padding: 12px;
-  border-radius: 10px;
-
-  background: linear-gradient(
-    135deg,
-    $accent,
-    $secondary
-  );
-
-  color: $white;
-  font-weight: 600;
-  cursor: pointer;
-}
+/* ==========================
+   Tablet
+========================== */
 
 @media (max-width: 992px) {
 
-  .darshan-booking-layout {
-    grid-template-columns: 1fr;
+  .places-list {
+
+    label {
+      width: calc(50% - 8px);
+    }
+
   }
 
-  .darshan-booking-summary {
-    position: static;
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+
+  .custom-place-box {
+    flex-direction: column;
+
+    .add-place-btn {
+      width: 100%;
+    }
   }
 
-  .form-grid {
-    grid-template-columns: 1fr;
+  .places-list {
+    flex-direction: column;
+
+    label {
+      width: 90%;
+    }
   }
 
-  .full-width {
-    grid-column: span 1;
+}
+
+/* ==========================
+   Pooja Section
+========================== */
+
+.pooja-planner-card {
+  background: $white;
+  border-radius: 18px;
+  padding: 25px;
+  border: 1px solid rgba($primary, 0.12);
+  box-shadow: 0 5px 20px rgba($primary, 0.08);
+  margin-top: 30px;
+
+  h4 {
+    margin: 0 0 20px;
+    color: $primary;
+    text-align: center;
+    font-size: 24px;
+  }
+}
+
+/* ==========================
+   Selected Poojas Section
+========================== */
+
+.selected-poojas-section {
+  margin-bottom: 25px;
+
+  .field-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: $primary;
+  }
+}
+
+/* ==========================
+   Selected Poojas Box
+========================== */
+
+.selected-poojas-box {
+  min-height: 20px;
+  border: 1px solid rgba($primary, 0.2);
+  border-radius: 10px;
+  padding: 12px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-bottom: 18px;
+  background: $bg;
+}
+
+/* ==========================
+   Pooja Chip
+========================== */
+
+.pooja-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 12px;
+
+  background: rgba($primary, 0.08);
+  color: $primary;
+
+  border-radius: 50px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  button {
+    width: 20px;
+    height: 20px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: $primary;
+    color: $white;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    line-height: 1;
+
+    transition: 0.3s;
+
+    &:hover {
+      background: $danger;
+    }
+  }
+}
+
+.placeholder {
+  color: $light-gray;
+  font-size: 14px;
+}
+
+/* ==========================
+   Custom Pooja
+========================== */
+
+.custom-pooja-box {
+  display: flex;
+  gap: 15px;
+
+  input {
+    flex: 1;
+
+    padding: 12px 15px;
+
+    border: 1px solid rgba($primary, 0.2);
+    border-radius: 10px;
+
+    outline: none;
+
+    color: $text;
+    background: $white;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+
+    &:focus {
+      border-color: $primary;
+    }
+  }
+
+  .add-pooja-btn {
+    padding: 12px 24px;
+
+    background: $primary;
+    color: $white;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: 0.3s;
+
+    &:hover {
+      background: $secondary;
+    }
+  }
+}
+
+/* ==========================
+   Pooja Checkbox List
+========================== */
+
+.poojas-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+  margin-top: 25px;
+
+  label {
+    width: calc(22% - 12px);
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 15px;
+
+    border: 1px solid rgba($primary, 0.15);
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    &:hover {
+      border-color: $primary;
+      background: rgba($primary, 0.05);
+    }
+
+    input {
+      width: 18px;
+      height: 18px;
+
+      accent-color: $primary;
+
+      cursor: pointer;
+
+      flex-shrink: 0;
+    }
+
+    span {
+      font-size: 15px;
+
+      color: $text;
+
+      line-height: 1.4;
+    }
+  }
+}
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width: 992px) {
+  .poojas-list {
+    label {
+      width: calc(50% - 8px);
+    }
+  }
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+  .pooja-planner-card {
+    padding: 18px;
+
+    h4 {
+      font-size: 21px;
+    }
+  }
+
+  .custom-pooja-box {
+    flex-direction: column;
+
+    .add-pooja-btn {
+      width: 100%;
+    }
+  }
+
+  .poojas-list {
+    flex-direction: column;
+
+    label {
+      width: 90%;
+    }
+  }
+}
+
+
+/* ==========================
+   Travel Details Card
+========================== */
+
+.travel-details-card {
+  background: $white;
+
+  border-radius: 18px;
+
+  padding: 25px;
+
+  margin-top: 30px;
+
+  border: 1px solid rgba($primary, 0.12);
+
+  box-shadow: 0 5px 20px rgba($primary, 0.08);
+
+
+  h4 {
+    margin: 0 0 25px;
+
+    color: $primary;
+
+    text-align: center;
+
+    font-size: 24px;
+  }
+}
+
+
+/* ==========================
+   Travel Content
+========================== */
+
+.travel-details-content {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+
+/* ==========================
+   Travel Field
+========================== */
+
+.travel-field {
+
+  .field-label {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-weight: 600;
+
+    color: $primary;
+
+    font-size: 15px;
+  }
+
+
+  select {
+
+    width: 100%;
+
+    max-width: 350px;
+
+    padding: 12px 15px;
+
+    border: 1px solid rgba($primary, 0.2);
+
+    border-radius: 10px;
+
+    background: $bg;
+
+    color: $text;
+
+    font-size: 15px;
+
+    outline: none;
+
+    cursor: pointer;
+
+
+    &:focus {
+
+      border-color: $primary;
+
+    }
+
+  }
+
+}
+
+
+/* ==========================
+   Radio Options
+========================== */
+
+.travel-radio-list {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+
+  label {
+
+    min-width: 160px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 15px;
+
+    border: 1px solid rgba($primary, 0.15);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+
+    &:hover {
+
+      border-color: $primary;
+
+      background: rgba($primary, 0.05);
+
+    }
+
+
+    input {
+
+      width: 18px;
+
+      height: 18px;
+
+      accent-color: $primary;
+
+      cursor: pointer;
+
+      flex-shrink: 0;
+
+    }
+
+
+    span {
+
+      color: $text;
+
+      font-size: 15px;
+
+    }
+
+  }
+
+}
+
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width: 992px) {
+
+  .travel-radio-list {
+
+    label {
+
+      min-width: 200px;
+
+    }
+
+  }
+
+}
+
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+
+  .travel-details-card {
+
+    padding: 18px;
+
+
+    h4 {
+
+      font-size: 21px;
+
+    }
+
+  }
+
+
+  .travel-field {
+
+    select {
+
+      max-width: 100%;
+
+    }
+
+  }
+
+
+  .travel-radio-list {
+
+    flex-direction: column;
+
+
+    label {
+
+      width: 90%;
+
+      min-width: unset;
+
+    }
+
+  }
+
+}
+
+/* ==========================
+   Guest Counter
+========================== */
+
+.guest-counter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.guest-counter {
+  min-width: 220px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+
+  padding: 12px 15px;
+
+  border: 1px solid rgba($primary, 0.15);
+  border-radius: 10px;
+
+  background: $white;
+
+  .guest-label {
+    color: $text;
+    font-size: 15px;
+    font-weight: 500;
+  }
+}
+
+.counter-controls {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid rgba($primary, 0.2);
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  button {
+    width: 36px;
+    height: 36px;
+
+    border: none;
+
+    background: rgba($primary, 0.07);
+    color: $primary;
+
+    font-size: 20px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    &:hover:not(:disabled) {
+      background: $primary;
+      color: $white;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  .counter-value {
+    min-width: 40px;
+
+    text-align: center;
+
+    color: $text;
+
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+  .guest-counter-list {
+    flex-direction: column;
+  }
+
+  .guest-counter {
+    width: 90%;
+    min-width: unset;
+  }
+}
+
+
+/* ==========================
+   Extra Services Card
+========================== */
+
+.extra-services-card {
+  background: $white;
+  border-radius: 18px;
+  padding: 25px;
+  margin-top: 30px;
+  border: 1px solid rgba($primary, 0.12);
+  box-shadow: 0 5px 20px rgba($primary, 0.08);
+
+  h4 {
+    margin: 0 0 25px;
+    color: $primary;
+    text-align: center;
+    font-size: 24px;
+  }
+}
+
+
+/* ==========================
+   Extra Services List
+========================== */
+
+.extra-services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  label {
+    width: calc(33.333% - 10px);
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 14px 16px;
+
+    border: 1px solid rgba($primary, 0.15);
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    box-sizing: border-box;
+
+    &:hover {
+      border-color: $primary;
+      background: rgba($primary, 0.05);
+    }
+
+    input {
+      width: 18px;
+      height: 18px;
+
+      accent-color: $primary;
+
+      cursor: pointer;
+
+      flex-shrink: 0;
+    }
+
+    span {
+      color: $text;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+  }
+}
+
+
+/* ==========================
+   Tablet
+========================== */
+
+@media (max-width: 992px) {
+  .extra-services-list {
+    label {
+      width: calc(50% - 8px);
+    }
+  }
+}
+
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+  .extra-services-card {
+    padding: 18px;
+
+    h4 {
+      font-size: 21px;
+    }
+  }
+
+  .extra-services-list {
+    flex-direction: column;
+
+    label {
+      width: 100%;
+    }
+  }
+}
+
+/* ==========================
+   Continue Section
+========================== */
+
+.planner-continue-section {
+  display: flex;
+  justify-content: center;
+
+  margin-top: 35px;
+  margin-bottom: 40px;
+}
+
+.continue-btn {
+  min-width: 220px;
+
+  padding: 14px 35px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: $primary;
+  color: $white;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+
+  &:hover:not(:disabled) {
+    background: $secondary;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba($primary, 0.2);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .planner-continue-section {
+    margin-top: 25px;
+  }
+
+  .continue-btn {
+    width: 100%;
+  }
+}
+
+/* ==========================
+   Contact Details Card
+========================== */
+
+.contact-details-card {
+  background: $white;
+  border-radius: 18px;
+  padding: 25px;
+  margin-top: 30px;
+  border: 1px solid rgba($primary, 0.12);
+  box-shadow: 0 5px 20px rgba($primary, 0.08);
+
+  h4 {
+    margin: 0 0 25px;
+    color: $primary;
+    text-align: center;
+    font-size: 24px;
+  }
+}
+
+
+/* ==========================
+   Contact Details Content
+========================== */
+
+.contact-details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+
+/* ==========================
+   Contact Field
+========================== */
+
+.contact-field {
+  .field-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: $primary;
+    font-size: 15px;
+  }
+
+  input[type="date"],
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px 15px;
+
+    border: 1px solid rgba($primary, 0.2);
+    border-radius: 10px;
+
+    background: $bg;
+    color: $text;
+
+    font-size: 15px;
+    font-family: inherit;
+
+    outline: none;
+
+    transition: 0.3s;
+
+    &:focus {
+      border-color: $primary;
+    }
+  }
+
+  input[type="date"] {
+    max-width: 350px;
+    cursor: pointer;
+  }
+
+  textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+}
+
+
+/* ==========================
+   Travellers Counter
+========================== */
+
+.travellers-counter {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid rgba($primary, 0.2);
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  button {
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    background: rgba($primary, 0.07);
+    color: $primary;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    &:hover:not(:disabled) {
+      background: $primary;
+      color: $white;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  .travellers-value {
+    min-width: 55px;
+
+    text-align: center;
+
+    color: $text;
+
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 768px) {
+  .contact-details-card {
+    padding: 18px;
+
+    h4 {
+      font-size: 21px;
+    }
+  }
+
+  .contact-field {
+    input[type="date"] {
+      max-width: 100%;
+    }
   }
 }

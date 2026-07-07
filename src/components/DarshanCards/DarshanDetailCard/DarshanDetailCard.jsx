@@ -94,10 +94,10 @@ const DarshanDetailCard = ({
 
           <div className="price">
             ₹{darshan.price}
-            <span>/ Person</span>
+            <span>/ Cab</span>
           </div>
 
-          <button
+          <button className={isAdded ? "added-btn" : ""}
             onClick={() => {
               if (isAdded) {
                 onNext();

@@ -1,41 +1,93 @@
-import darshan1 from "../assets/images/dershan1.png";
-import ujjain2 from "../assets/images/ujjain2.png";
-import ujjain3 from "../assets/images/ujjain3.png";
+import ujjaindarshan from "../assets/images/ujjaindarshan.jpg";
+import omkareshwar from "../assets/images/omkareshwar.jpg";
+import Maabaglamukhi from "../assets/images/Maa-baglamukhi.jpg";
+import sanwaliya from "../assets/images/sanwaliya.jpg";
+import ISKCONTemple from "../assets/images/ISKCON_Temple.jpg";
+import chintaman from "../assets/images/chintaman.jpg";
+import maheswar from "../assets/images/maheswar.jpg";
+import mandu from "../assets/images/mandu.jpg";
+import dewas from "../assets/images/dewas.jpg";
+import kubreshwar from "../assets/images/kubreshwar.png";
 
 export const darshanData = [
   {
     id: 1,
-    image: darshan1,
-    name: "Mahakal VIP Darshan",
-    duration: "2 Hours",
+    image: ujjaindarshan,
+    name: "Ujjain Darshan",
+    duration: "Half Day",
 
     description:
-      "Priority darshan with dedicated assistance and smooth temple entry.",
+      "Mahakal Temple | Harsiddhi Mata | Mangalnath | Kal Bhairav | Sandipani Ashram",
 
     specialities: [
       "Priority Entry",
       "Expert Guide",
-      "Full Assistance",
     ],
 
     includes: [
-      "VIP Entry",
+      "Travel Support",
       "Guide",
-      "Temple Assistance",
-    //   "Support Team",
     ],
 
-    price: 1499,
+    price: 1999,
   },
 
   {
     id: 2,
-    image: ujjain2,
-    name: "Kal Bhairav Darshan",
+    image: omkareshwar,
+    name: "Omkareshwar Temple",
+    duration: "Full Day",
+
+    description:
+      "Visit the sacred Jyotirlinga and feel divine peace.",
+
+    specialities: [
+      "Jyotirlinga Visit",
+      "Guide",
+      "Premium Support",
+    ],
+
+    includes: [
+      "Darshan",
+      "Guide",
+      "Temple Assistance",
+    ],
+
+    price: 3499,
+  },
+
+  {
+    id: 3,
+    image: Maabaglamukhi,
+    name: "Baglamukhi Mata Temple",
     duration: "Half Day",
 
     description:
-      "Visit the famous Kal Bhairav temple with spiritual guidance.",
+      "Seek the blessings of Maa Baglamukhi for strength and success.",
+
+    specialities: [
+      "Temple Visit",
+      "Spiritual Guidance",
+      "Comfort Journey",
+    ],
+
+    includes: [
+      "Temple Entry",
+      "Guide",
+      "Travel Support",
+    ],
+
+    price: 2999,
+  },
+
+  {
+    id: 4,
+    image: sanwaliya,
+    name: "Shree Sanwaliya Seth Temple",
+    duration: "Full Day",
+
+    description:
+      "Pray for happiness, wealth, and a successful life.",
 
     specialities: [
       "Temple Visit",
@@ -49,67 +101,17 @@ export const darshanData = [
       "Travel Support",
     ],
 
-    price: 899,
-  },
-
-  {
-    id: 3,
-    image: ujjain3,
-    name: "Omkareshwar Darshan",
-    duration: "Full Day",
-
-    description:
-      "Complete darshan experience at Omkareshwar Jyotirlinga.",
-
-    specialities: [
-      "Jyotirlinga Visit",
-      "Guide",
-      "Premium Support",
-    ],
-
-    includes: [
-      "Darshan",
-      "Guide",
-      "Temple Assistance",
-    //   "Support Team",
-    ],
-
-    price: 2499,
-  },
-
-  {
-    id: 4,
-    image: ujjain3,
-    name: "Baglamukhi Darshan",
-    duration: "Half Day",
-
-    description:
-      "Seek blessings of Maa Baglamukhi with a guided temple visit.",
-
-    specialities: [
-      "Temple Visit",
-      "Spiritual Guidance",
-      "Comfort Journey",
-    ],
-
-    includes: [
-      "Temple Entry",
-      "Guide",
-      "Travel Support",
-    //   "Assistance Team",
-    ],
-
-    price: 1299,
+    price: 5999,
   },
 
   {
     id: 5,
-    image: ujjain3,
-    name: "Mangalnath Darshan",
+    image: ISKCONTemple,
+    name: "ISKCON Temple",
     duration: "Half Day",
 
     description:
-        "Visit the sacred Mangalnath Temple, believed to be the birthplace of Mars (Mangal Grah).",
+        "Experience peace, devotion, and the love of Lord Krishna.",
 
     specialities: [
         "Mangal Dosh Puja",
@@ -127,37 +129,13 @@ export const darshanData = [
   },
 
   {
-  id: 6,
-  image: ujjain3,
-  name: "Harsiddhi Mata Darshan",
-  duration: "2 Hours",
-
-  description:
-      "Seek blessings at the famous Shakti Peeth of Maa Harsiddhi in Ujjain.",
-
-  specialities: [
-      "Shakti Peeth Visit",
-      "Aarti Experience",
-      "Guide Support",
-  ],
-
-  includes: [
-      "Temple Entry",
-      "Guide",
-      "Assistance Team",
-  ],
-
-  price: 799,
-  },
-
-  {
-    id: 7,
-    image: ujjain3,
-    name: "Chintaman Ganesh Darshan",
+    id: 6,
+    image: chintaman,
+    name: "Chintaman Ganesh + Ashtavinayak Temple",
     duration: "Half Day",
 
     description:
-      "Visit the ancient Chintaman Ganesh Temple known for fulfilling devotees' wishes.",
+      "Pray to Lord Ganesha and remove your worries.",
 
     specialities: [
       "Ancient Temple",
@@ -171,29 +149,100 @@ export const darshanData = [
       "Travel Support",
     ],
 
-    price: 899,
+    price: 999,
+  },
+
+  {
+    id: 7,
+    image: maheswar,
+    name: "Omkareshwar Temple + Maheshwar Fort",
+    duration: "Full Day",
+
+    description:
+      "Experience history by the sacred Narmada River and explore the beautiful Maheshwar Fort.",
+
+    specialities: [
+      "Historic Fort",
+      "Narmada Ghat",
+      "Scenic Views",
+    ],
+
+    includes: [
+      "Transportation",
+      "Guide",
+      "Sightseeing Assistance",
+    ],
+
+    price: 5999,
   },
 
   {
     id: 8,
-    image: ujjain3,
-    name: "84 Mahadev Yatra",
+    image: mandu,
+    name: "Mandu Fort",
     duration: "Full Day",
 
     description:
-      "Complete spiritual journey covering the sacred 84 Mahadev temples of Ujjain.",
+      "Walk through the glory of ancient Mandu and discover its magnificent forts and palaces.",
 
     specialities: [
-      "84 Mahadev Circuit",
-      "Dedicated Guide",
-      "Full-Day Coverage",
+      "Historic Monuments",
+      "Ancient Palaces",
+      "Heritage Tour",
+    ],
+
+    includes: [
+      "Transportation",
+      "Guide",
+      "Sightseeing Assistance",
+    ],
+
+    price: 4299,
+  },
+
+  {
+    id: 9,
+    image: dewas,
+    name: "Dewas Tekri",
+    duration: "Half Day",
+
+    description:
+      "Seek blessings at the sacred hill of Maa Chamunda and Tulja Bhavani Temple.",
+
+    specialities: [
+      "Hill Temple",
+      "Spiritual Experience",
+      "Panoramic Views",
     ],
 
     includes: [
       "Transportation",
       "Guide",
       "Temple Assistance",
-      // "Support Team",
+    ],
+
+    price: 1999,
+  },
+
+  {
+    id: 10,
+    image: kubreshwar,
+    name: "Kubreshwar Mahadev",
+    duration: "Full Day",
+
+    description:
+      "Visit the sacred Kubreshwar Mahadev Temple and seek the blessings of Lord Shiva for peace and prosperity.",
+
+    specialities: [
+      "Lord Shiva Temple",
+      "Spiritual Experience",
+      "Peaceful Atmosphere",
+    ],
+
+    includes: [
+      "Transportation",
+      "Guide",
+      "Temple Assistance",
     ],
 
     price: 3499,

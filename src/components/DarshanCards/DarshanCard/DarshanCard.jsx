@@ -33,7 +33,7 @@ const DarshanCard = ({ item }) => {
           <div className="card-darshan-price">
             ₹{item.price}
             {item.price !== "Custom" && (
-              <span>/ Person</span>
+              <span>/ Cab</span>
             )}
           </div>
 

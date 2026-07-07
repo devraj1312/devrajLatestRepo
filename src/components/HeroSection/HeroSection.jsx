@@ -6,11 +6,11 @@ import logo4 from "../../assets/images/logo4.png";
 import TempleSearchWrapper from "../TempleSearchWrapper/TempleSearchWrapper";
 
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { FiArrowRight } from "react-icons/fi";
 
 import {
   FaShieldAlt,
-  FaHeadset,
-  FaUsers,
   FaTag,
   FaLock,
   FaClipboardCheck,
@@ -43,6 +43,8 @@ const HeroSection = ({
     return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    const navigate = useNavigate();
+
 
   return (
     <>
@@ -61,58 +63,24 @@ const HeroSection = ({
                 />
 
                 <h1>
-                    Experience Divine
-                    <span> Ujjain </span>
+                    Ujjain's
+                    <span>1st Trip Planner</span>
+                    <small>& Travel Partner</small>
+
+                    <div className="hero-divider">
+                        ༺━━━━━━━━━━ ❖ ━━━━━━━━━━༻
+                    </div>
                 </h1>
 
                 <p>
-                    Plan your spiritual journey with our 
-                    <br />
-                    Customized Pooja, Darshan,
-                    Stay <br /> & Travel Services.
+                    Plan Your Custom Trip, <span>Your Way.</span>
                 </p>
 
-                {/* STATS */}
+                <button className="hero-btn" onClick={() => navigate("/custom-darshan-planner")}>
+                    Plan Your Trip
+                    <FiArrowRight />
+                </button>
 
-                <div className="divine-stats-bar">
-
-                    <div className="divine-stat-item">
-                    <div className="divine-stat-icon">
-                        <FaUsers />
-                    </div>
-
-                    <div className="divine-stat-content">
-                        <h4>
-                        500K+ Happy Devotees
-                        </h4>
-                    </div>
-                    </div>
-
-                    <div className="divine-stat-item">
-                    <div className="divine-stat-icon">
-                        <FaShieldAlt />
-                    </div>
-
-                    <div className="divine-stat-content">
-                        <h4>
-                        Best Price Guarantee
-                        </h4>
-                    </div>
-                    </div>
-
-                    <div className="divine-stat-item">
-                    <div className="divine-stat-icon">
-                        <FaHeadset />
-                    </div>
-
-                    <div className="divine-stat-content">
-                        <h4>
-                        24x7 Support
-                        </h4>
-                    </div>
-                    </div>
-
-                </div>
 
                 {/* SEARCH */}
 
@@ -156,17 +124,6 @@ const HeroSection = ({
             <p>Services</p>
             </div>
         </div>
-
-        {/* <div className="feature-item">
-            <div className="icon">
-            <FaHeadset />
-            </div>
-
-            <div className="text">
-            <h4>24x7 Customer</h4>
-            <p>Support</p>
-            </div>
-        </div> */}
 
         <div className="feature-item">
             <div className="icon">

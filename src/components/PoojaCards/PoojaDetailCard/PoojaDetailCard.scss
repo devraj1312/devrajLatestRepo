@@ -200,6 +200,14 @@
     &:hover {
       transform: translateY(-2px);
     }
+    
+    &.added-btn {
+      background: linear-gradient(
+        135deg,
+        $success-light,
+        $success
+      );
+    }
   }
 }
 
