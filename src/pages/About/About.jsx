@@ -13,26 +13,26 @@ const About = () => {
 
   const journey = [
     {
-      year: "2018",
+      year: "2026",
       title: "Founded",
       text:
-        "UjjainYatra was started to make Ujjain travel simple and hassle-free.",
+        "UjjainTirth Yatra was started to make Ujjain travel simple and hassle-free.",
     },
     {
-      year: "2020",
-      title: "50+ Hotel Partners",
+      year: "50+",
+      title: "Travel Partners",
       text:
-        "Expanded our hotel network across Ujjain and nearby locations.",
+        "Expanded our travel network across Ujjain and nearby locations.",
     },
     {
-      year: "2023",
+      year: "10+",
       title: "Cab Services",
       text:
         "Launched cab booking services for temple tours and local travel.",
     },
     {
-      year: "2026",
-      title: "10,000+ Travelers",
+      year: "1k+",
+      title: "Travelers",
       text:
         "Successfully served thousands of pilgrims and tourists.",
     },

@@ -18,9 +18,9 @@ import "./Help.scss";
 
 const faqData = [
   {
-    question: "How can I book a hotel in Ujjain?",
+    question: "How can I create a custom tour plan?",
     answer:
-      "Go to the Hotels page, select your preferred hotel, choose check-in and check-out dates, and complete your booking.",
+      "Tell us your travel dates, destinations, and requirements, and we'll design a personalized tour package just for you.",
   },
   {
     question: "How do I book a cab service?",
@@ -41,9 +41,14 @@ const faqData = [
 
 const categories = [
   {
+    icon: <FaUser />,
+    title: "Custom Travel Plan",
+    text: "Plan your trip your way with customized temple visits and transportation.",
+  },
+  {
     icon: <FaHotel />,
-    title: "Hotel Bookings",
-    text: "Help with searching, booking, modifying, or cancelling hotel reservations.",
+    title: "Darshan Bookings",
+    text: "Help with searching, booking, modifying, or cancelling darshan reservations.",
   },
   {
     icon: <FaCar />,
@@ -55,24 +60,19 @@ const categories = [
     title: "Payments & Refunds",
     text: "Questions about payment methods, billing, invoices, and refund processing.",
   },
-  {
-    icon: <FaUser />,
-    title: "Account & Profile",
-    text: "Help with account settings, login issues, and profile management.",
-  },
 ];
 
 const contactData = [
   {
     title: "Call Us",
-    value: "+91 98765 43210",
+    value: "+91 830 593 5500",
     subtitle: "Available 24/7",
     icon: <FiPhone />,
   },
   {
     title: "Email Us",
-    value: "support@ujjainyatra.com",
-    subtitle: "Response within 2 hours",
+    value: "support@ujjaintirthyatra.com",
+    subtitle: "Response within 12 hours",
     icon: <FiMail />,
   },
   {

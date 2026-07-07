@@ -36,10 +36,7 @@ const Footer = () => {
             </p>
 
             <div className="social-icons">
-              <a href="#"><FaFacebookF /></a>
-              <a href="#"><FaInstagram /></a>
-              <a href="#"><FaTwitter /></a>
-              <a href="#"><FaYoutube /></a>
+              <a href="https://www.instagram.com/ujjayintirthyatra?igsh=MW5maHk2cm5tejdjeg=="><FaInstagram /></a>
             </div>
 
           </div>
@@ -54,7 +51,7 @@ const Footer = () => {
               <li><Link to="/cabs">Cab Services</Link></li>
               <li><Link to="/pooja">Pooja Bookings</Link></li>
               <li><Link to="/darshan">Darshan Packages</Link></li>
-              <li><Link to="/custom-pooja">Custom Pooja</Link></li>
+              <li><Link to="/custom-darshan-planner">Custom Plan</Link></li>
             </ul>
 
           </div>
@@ -84,7 +81,7 @@ const Footer = () => {
               </li>
               <li>
                 <HiOutlineChevronRight className="footer-icon" />
-                <Link to="/help">Reviews</Link>
+                <Link to="/about">Reviews</Link>
               </li>
             </ul>
 
@@ -100,17 +97,17 @@ const Footer = () => {
 
               <li>
                 <FaPhoneAlt />
-                +91 123 456 7890
+                +91 747 092 2939
               </li>
 
               <li>
                 <FaEnvelope />
-                info@ujjainyatra.com
+                support@ujjaintirthyatra.com
               </li>
 
               <li>
                 <FaMapMarkerAlt />
-                123, Mahakal Marg,
+                City Mall, Freeganj,
                 Ujjain, Madhya Pradesh
               </li>
 

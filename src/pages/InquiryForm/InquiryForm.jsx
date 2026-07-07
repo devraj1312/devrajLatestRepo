@@ -105,11 +105,25 @@ const InquiryForm = () => {
       });
 
       if (data?.status === "success") {
-        // showSuccess(
-        //   `Inquiry Submitted Successfully\nClient ID: ${data.client_id}`
-        // );
         setBookingId(data.client_id);
         setShowSuccessPopup(true);
+
+          const message = `Hello,
+            I have submitted an inquiry on your website.
+
+            Booking ID: ${data.client_id}
+
+            Name: ${name}
+            Phone: ${phone}
+            Category: ${category}
+            Date: ${date}
+            Time: ${time};
+            Description: ${description}`;
+
+        window.open(
+          `https://wa.me/917470922939?text=${encodeURIComponent(message)}`,
+          "_blank"
+        );
 
         setName("");
         setPhone("");
