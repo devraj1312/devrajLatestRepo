@@ -7,16 +7,14 @@ import TempleSearchWrapper from "../TempleSearchWrapper/TempleSearchWrapper";
 
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { FiArrowRight } from "react-icons/fi";
 
 import {
   FaShieldAlt,
-  FaHeadset,
-  FaUsers,
   FaTag,
   FaLock,
   FaClipboardCheck,
 } from "react-icons/fa";
-import { FiArrowRight } from "react-icons/fi";
 
 const HeroSection = ({
   handleCabSearch,
@@ -83,47 +81,6 @@ const HeroSection = ({
                     <FiArrowRight />
                 </button>
 
-                {/* STATS */}
-
-                {/* <div className="divine-stats-bar">
-
-                    <div className="divine-stat-item">
-                    <div className="divine-stat-icon">
-                        <FaUsers />
-                    </div>
-
-                    <div className="divine-stat-content">
-                        <h4>
-                        500K+ Happy Devotees
-                        </h4>
-                    </div>
-                    </div>
-
-                    <div className="divine-stat-item">
-                    <div className="divine-stat-icon">
-                        <FaShieldAlt />
-                    </div>
-
-                    <div className="divine-stat-content">
-                        <h4>
-                        Best Price Guarantee
-                        </h4>
-                    </div>
-                    </div>
-
-                    <div className="divine-stat-item">
-                    <div className="divine-stat-icon">
-                        <FaHeadset />
-                    </div>
-
-                    <div className="divine-stat-content">
-                        <h4>
-                        24x7 Support
-                        </h4>
-                    </div>
-                    </div>
-
-                </div> */}
 
                 {/* SEARCH */}
 
