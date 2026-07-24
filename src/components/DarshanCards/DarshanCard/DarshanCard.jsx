@@ -1,6 +1,7 @@
 import { FaClock } from "react-icons/fa";
 import "./DarshanCard.scss";
 import { useNavigate } from "react-router-dom";
+import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 
 const DarshanCard = ({ item }) => {
 
@@ -46,10 +47,30 @@ const DarshanCard = ({ item }) => {
               </button>
             ) : (
               <>
-                <button className="darshan-details-btn"
+                {/* <button className="darshan-details-btn"
                 onClick={() => navigate("/darshan")}>
                   Details
-                </button>
+                </button> */}
+
+                <div className="darshan-contact-buttons">
+                  <a
+                    href="https://wa.me/917804025072"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contact-btn whatsapp-btn"
+                    aria-label="WhatsApp"
+                  >
+                    <FaWhatsapp />
+                  </a>
+
+                  <a
+                    href="tel:+917804025072"
+                    className="contact-btn call-btn"
+                    aria-label="Call"
+                  >
+                    <FaPhoneAlt />
+                  </a>
+                </div>
 
                 <button className="darshan-book-btn"
                 onClick={() => navigate("/darshan")}>

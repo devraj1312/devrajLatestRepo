@@ -65,7 +65,7 @@ const categories = [
 const contactData = [
   {
     title: "Call Us",
-    value: "+91 830 593 5500",
+    value: "+91 747 092 2939",
     subtitle: "Available 24/7",
     icon: <FiPhone />,
   },

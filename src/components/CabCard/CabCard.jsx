@@ -3,7 +3,9 @@ import {
   FaSnowflake,
   FaMusic,
   FaCheckCircle,
-  FaCar
+  FaCar,
+  FaWhatsapp,
+  FaPhoneAlt,
 } from "react-icons/fa";
 
 import "./CabCard.scss";
@@ -93,12 +95,55 @@ const CabCard = ({
             <span>{cab.type}</span>
           </div>
 
-          <div className="price">
-            ₹{cab.price}
-            <span>/ km</span>
+          <div className="bottom-section">
+
+            <div className="price">
+              ₹{cab.price}
+              <span>/ km</span>
+            </div>
+
+            <div className="cab-contact-buttons">
+
+              <a
+                href="https://wa.me/917804025072"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-btn whatsapp-btn"
+                aria-label="WhatsApp"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <FaWhatsapp />
+              </a>
+
+              <a
+                href="tel:+917804025072"
+                className="contact-btn call-btn"
+                aria-label="Call"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <FaPhoneAlt />
+              </a>
+
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+
+                  if (isSelected) {
+                    onNext();
+                  } else {
+                    onAdd();
+                  }
+                }}
+              >
+                {isSelected ? "Next" : "+ Add"}
+              </button>
+
+            </div>
+
           </div>
 
-          <button
+          {/* <button
             type="button"
             onClick={(e) => {
               e.stopPropagation();
@@ -111,7 +156,7 @@ const CabCard = ({
             }}
           >
             {isSelected ? "Next" : "+ Add"}
-          </button>
+          </button> */}
 
         </div>
 
