@@ -120,13 +120,13 @@ const Pooja = () => {
               </span>
 
               <h1>
-                Book Sacred Pooja Services
+                Book Pooja Services
               </h1>
 
               <p>
                 Connect with experienced pandits and
-                perform divine rituals for prosperity,
-                peace and spiritual well-being.
+                perform divine rituals for prosperity
+                and peace.
               </p>
 
             </div>
