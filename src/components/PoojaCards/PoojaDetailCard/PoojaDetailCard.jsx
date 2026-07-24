@@ -5,6 +5,8 @@ import {
   FaUserTie,
   FaOm,
   FaShieldAlt,
+  FaWhatsapp,
+  FaPhoneAlt,
 } from "react-icons/fa";
 
 const PoojaDetailCard = ({
@@ -81,29 +83,56 @@ const PoojaDetailCard = ({
         </div>
 
         <div className="pooja-price">
+
           <div className="duration">
             <FaClock />
             <span>{pooja.duration}</span>
           </div>
 
-          <div className="price-section">
+          <div className="bottom-section">
+
             <div className="price">
               ₹{pooja.price}
               <span>/ Pooja</span>
             </div>
 
-            <button className={isAdded ? "added-btn" : ""}
-              onClick={() => {
-                if (!isAdded) {
-                  onAdd(pooja);
-                } else {
-                  onNext();
-                }
-              }}
-            >
-              {isAdded ? "Next" : "+ Add"}
-            </button>
+            <div className="pooja-contact-buttons">
+
+              <a
+                href="https://wa.me/917804025072"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-btn whatsapp-btn"
+                aria-label="WhatsApp"
+              >
+                <FaWhatsapp />
+              </a>
+
+              <a
+                href="tel:+917804025072"
+                className="contact-btn call-btn"
+                aria-label="Call"
+              >
+                <FaPhoneAlt />
+              </a>
+
+              <button
+                className={isAdded ? "added-btn" : ""}
+                onClick={() => {
+                  if (isAdded) {
+                    onNext();
+                  } else {
+                    onAdd(pooja);
+                  }
+                }}
+              >
+                {isAdded ? "Next" : "+ Add"}
+              </button>
+
+            </div>
+
           </div>
+
         </div>
         
       </div>

@@ -122,110 +122,285 @@
   }
 }
 
+// .darshan-price {
+//   width: 170px;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-end;
+//   text-align: right;
+
+//   .duration {
+//     display: flex;
+//     align-items: center;
+//     gap: 8px;
+//     color: $primary;
+//     font-weight: 600;
+//     font-size: 14px;
+//     margin-bottom: 8px;
+
+//     svg {
+//       font-size: 13px;
+//     }
+//   }
+
+//   .price {
+//     margin-top: auto;
+//     margin-bottom: 12px;
+//     font-size: 20px;
+//     font-weight: 700;
+//     color: $primary;
+
+//     span {
+//       margin-left: 4px;
+//       font-size: 13px;
+//       font-weight: 400;
+//       color: $light-gray;
+//     }
+//   }
+
+// .darshan-contact-buttons {
+//   display: flex;
+//   align-items: center;
+//   gap: 8px;
+//   width: 100%;
+//   margin-top: 12px;
+// }
+
+// .contact-btn {
+//   width: 40px;
+//   height: 40px;
+//   flex-shrink: 0;
+//   border-radius: 10px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   text-decoration: none;
+//   font-size: 18px;
+//   transition: all 0.3s ease;
+//   cursor: pointer;
+
+//   &:hover {
+//     transform: translateY(-2px);
+//   }
+// }
+
+// .whatsapp-btn {
+//   background: $white;
+//   color: $success-light;
+//   border: 1px solid $success-light;
+
+//   &:hover {
+//     background: rgba($success-light, 0.08);
+//   }
+// }
+
+// .call-btn {
+//   background: $primary;
+//   color: $white;
+//   border: 1px solid $primary;
+
+//   &:hover {
+//     background: $secondary;
+//     border-color: $secondary;
+//   }
+// }
+
+// button {
+//   flex: 1;
+//   height: 40px;
+//   border: none;
+//   border-radius: 10px;
+//   background: linear-gradient(135deg, $accent, $secondary);
+//   color: $white;
+//   font-size: 14px;
+//   font-weight: 600;
+//   cursor: pointer;
+//   transition: all 0.3s ease;
+
+//   &:hover {
+//     transform: translateY(-2px);
+//   }
+
+//   &.added-btn {
+//     background: linear-gradient(
+//       135deg,
+//       $success-light,
+//       $success
+//     );
+//   }
+// }
+// }
 .darshan-price {
-  width: 170px;
+  width: 180px;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-self: stretch; // <-- Full height le lega
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.duration {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+
+  color: $primary;
+  font-size: 14px;
+  font-weight: 600;
+
+  svg {
+    font-size: 13px;
+  }
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+  }
+}
+
+.bottom-section {
+  margin-top: auto;
+}
+
+.price {
   text-align: right;
+  margin-bottom: 14px;
 
-  .duration {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: $primary;
-    font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: $primary;
 
-    svg {
-      font-size: 13px;
-    }
+  span {
+    margin-left: 4px;
+    font-size: 13px;
+    color: $light-gray;
+    font-weight: 400;
   }
 
-  .price {
-    margin-top: auto;
-    margin-bottom: 12px;
-    font-size: 20px;
-    font-weight: 700;
-    color: $primary;
+  @media (max-width: 768px) {
+    text-align: left;
+  }
+}
 
-    span {
-      margin-left: 4px;
-      font-size: 13px;
-      font-weight: 400;
-      color: $light-gray;
-    }
+.darshan-contact-buttons {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.contact-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  transition: .3s;
+  flex-shrink: 0;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.whatsapp-btn {
+  background: $white;
+  color: $success-light;
+  border: 1px solid $success-light;
+}
+
+.call-btn {
+  background: $primary;
+  color: $white;
+}
+
+.darshan-contact-buttons button {
+  flex: 1;
+  height: 40px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, $accent, $secondary);
+  color: $white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: .3s;
+
+  &:hover {
+    transform: translateY(-2px);
   }
 
-  button {
-    min-width: 120px;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 18px;
-    background: linear-gradient(135deg, $accent, $secondary);
-    color: $white;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: .3s ease;
-
-    &:hover {
-      transform: translateY(-2px);
-    }
-
-    &.added-btn {
-      background: linear-gradient(
-        135deg,
-        $success-light,
-        $success
-      );
-    }
+  &.added-btn {
+    background: linear-gradient(
+      135deg,
+      $success-light,
+      $success
+    );
   }
 }
 
 /* ================= MOBILE ================= */
 
 @media (max-width: 768px) {
-
   .darshan-price {
     width: 100%;
-
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-areas:
-      "duration duration"
-      "price button";
-
-    align-items: center;
-    row-gap: 10px;
-    column-gap: 12px;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 16px;
   }
 
-  .darshan-price .duration {
-    grid-area: duration;
-    margin-bottom: 0;
-    justify-self: start;
+  .duration {
+    justify-content: flex-start;
+    font-size: 14px;
   }
 
-  .darshan-price .price {
-    grid-area: price;
+  .bottom-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .price {
     margin: 0;
-    justify-self: start;
-    font-size: 18px;
+    text-align: left;
+    font-size: 20px;
 
     span {
-      font-size: 11px;
+      font-size: 12px;
     }
   }
 
-  .darshan-price button {
-    grid-area: button;
-    justify-self: end;
+  .darshan-contact-buttons {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 
-    min-width: 95px;
-    padding: 8px 14px;
+  .contact-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 17px;
+  }
+
+  .darshan-contact-buttons button {
+    flex: 1;
+    height: 38px;
     font-size: 13px;
   }
 

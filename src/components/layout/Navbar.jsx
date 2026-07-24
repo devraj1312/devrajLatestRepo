@@ -4,10 +4,9 @@ import {
   FaHome,
   FaTaxi,
   FaPrayingHands,
-  FaPlaceOfWorship,
+  FaPlaceOfWorship,FaWhatsapp, FaPhoneAlt
 } from "react-icons/fa";
 import logo2 from "../../assets/images/logo2.png";
-import { FaWhatsapp } from "react-icons/fa";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -33,15 +32,27 @@ const Navbar = () => {
             <NavLink to="/help">Help Us</NavLink>
           </div>
 
-          <a
-            href="https://wa.me/917470922939"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-whatsapp"
-            aria-label="Chat on WhatsApp"
-          >
-            <FaWhatsapp />
-          </a>
+          <div className="nav-contact">
+
+            <a
+              href="https://wa.me/917470922939"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-whatsapp"
+              aria-label="WhatsApp"
+            >
+              <FaWhatsapp />
+            </a>
+
+            <a
+              href="tel:+917470922939"
+              className="nav-call"
+              aria-label="Call"
+            >
+              <FaPhoneAlt />
+            </a>
+
+          </div>
           
         </div>
       </nav>

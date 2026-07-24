@@ -108,11 +108,9 @@ const InquiryForm = () => {
         setBookingId(data.client_id);
         setShowSuccessPopup(true);
 
-          const message = `Hello,
-            I have submitted an inquiry on your website.
-
+          const message = 
+          `Hello, I have submitted an inquiry on your website.
             Booking ID: ${data.client_id}
-
             Name: ${name}
             Phone: ${phone}
             Category: ${category}

@@ -1,6 +1,6 @@
 import "./PoojaCard.scss";
 import { useNavigate } from "react-router-dom";
-import { FaClock } from "react-icons/fa";
+import { FaWhatsapp, FaPhoneAlt, FaClock } from "react-icons/fa";
 
 const PoojaCard = ({
   pooja,
@@ -43,10 +43,29 @@ const PoojaCard = ({
 
         <div className="booking-pooja-actions">
 
-            <button className="booking-details-btn"
+            {/* <button className="booking-details-btn"
             onClick={() => navigate("/pooja")}>
             Details
-            </button>
+            </button> */}
+            <div className="darshan-contact-buttons">
+              <a
+                href="https://wa.me/917804025072"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-btn whatsapp-btn"
+                aria-label="WhatsApp"
+              >
+                <FaWhatsapp />
+              </a>
+
+              <a
+                href="tel:+917804025072"
+                className="contact-btn call-btn"
+                aria-label="Call"
+              >
+                <FaPhoneAlt />
+              </a>
+            </div>
 
             <button className="booking-book-btn"
             onClick={() => navigate("/pooja")}>

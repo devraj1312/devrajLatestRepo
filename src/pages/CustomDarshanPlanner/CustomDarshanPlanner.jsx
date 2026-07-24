@@ -593,7 +593,7 @@ const CustomDarshanPlanner = () => {
           <div className="contact-details-content">
 
             {/* Travel Date */}
-            <div className="contact-field">
+            {/* <div className="contact-field">
               <label className="field-label">
                 Travel Date
               </label>
@@ -604,7 +604,7 @@ const CustomDarshanPlanner = () => {
                 min={new Date().toISOString().split("T")[0]}
                 onChange={(e) => setTravelDate(e.target.value)}
               />
-            </div>
+            </div> */}
 
 
             {/* Number of Travellers */}
