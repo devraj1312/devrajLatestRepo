@@ -49,7 +49,7 @@ const PoojaCard = ({
             </button> */}
             <div className="darshan-contact-buttons">
               <a
-                href="https://wa.me/917804025072"
+                href="https://wa.me/917470922939"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-btn whatsapp-btn"
@@ -59,7 +59,7 @@ const PoojaCard = ({
               </a>
 
               <a
-                href="tel:+917804025072"
+                href="tel:+917470922939"
                 className="contact-btn call-btn"
                 aria-label="Call"
               >

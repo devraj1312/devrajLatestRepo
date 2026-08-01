@@ -3,6 +3,7 @@ import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { FaCar, FaMapMarkerAlt, FaCalendarAlt, FaClock } from "react-icons/fa";
 import CabCard from "../../components/CabCard/CabCard";
 import "./Cabs.scss";
+import { cabData } from "../../data/cabData";
 import { bookCab, getCabs } from "../../services/cabService";
 // import { showSuccess, showError, showWarning } from "../../utils/toast";
 import AutocompleteInput from "../../components/AutocompleteInput";
@@ -250,7 +251,7 @@ const Cabs = () => {
           <div className="cabs-layout">
 
             {/* Cab Grid */}
-            <div className="cab-grid">
+            {/* <div className="cab-grid">
               <h2>
                 Choose Your <span>Perfect Ride</span>
               </h2>
@@ -259,33 +260,12 @@ const Cabs = () => {
                 <p>Loading cabs...</p>
               ) : (          
                   cabTypes.map((cab) => (
-                    // <div
-                    //   key={cab.id}
-                    //   className={`cab-item ${
-                    //     selectedCab?.id === cab.id
-                    //       ? "selected"
-                    //       : ""
-                    //   }`}
-                    //   onClick={() => {
-                    //     setSelectedCab(cab);
-                    //     navigate(`/cabs/${cab.id}`);
-                    //   }}
-                    // >
                     <div
                       className={`cab-item ${
                         selectedCab?.id === cab.id ? "selected" : ""
                       }`}
                       onClick={() => setSelectedCab(cab)}
                     >
-                      {/* <CabCard cab={cab} /> */}
-                      {/* <CabCard
-                        cab={cab}
-                        isSelected={selectedCab?.id === cab.id}
-                        onSelect={() => {
-                          setSelectedCab(cab);
-                          navigate(`/cabs/${cab.id}`);
-                        }}
-                      /> */}
                       <CabCard
                         cab={cab}
                         isSelected={selectedCab?.id === cab.id}
@@ -295,6 +275,30 @@ const Cabs = () => {
                     </div>
                   ))
               )}
+            </div> */}
+
+            {/* Cab Grid */}
+            <div className="cab-grid">
+              <h2>
+                Choose Your <span>Perfect Ride</span>
+              </h2>
+
+              {cabData.map((cab) => (
+                <div
+                  key={cab.id}
+                  className={`cab-item ${
+                    selectedCab?.id === cab.id ? "selected" : ""
+                  }`}
+                  onClick={() => setSelectedCab(cab)}
+                >
+                  <CabCard
+                    cab={cab}
+                    isSelected={selectedCab?.id === cab.id}
+                    onAdd={() => setSelectedCab(cab)}
+                    onNext={scrollToForm}
+                  />
+                </div>
+              ))}
             </div>
 
           {/* Sidebar */}
